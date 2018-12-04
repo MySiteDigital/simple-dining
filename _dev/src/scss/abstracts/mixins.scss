@@ -1,0 +1,17 @@
+@mixin bp($point) {
+  @if $point == min-sm { // 544px
+    @media (min-width: 34em) { @content; }
+  }
+  @else if $point == min-md { // 768px
+    @media (min-width: 48em) { @content; }
+  }
+  @else if $point == min-lg { // 992px
+    @media (min-width: 62em)  { @content; }
+  }
+  @else if $point == min-xl { // 1200px
+    @media (min-width: 75em)  { @content; }
+  }
+  @else if $point == min-xxl { // 1472px
+    @media (min-width: 92em)  { @content; }
+  }
+}

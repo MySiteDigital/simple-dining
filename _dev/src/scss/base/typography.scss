@@ -1,0 +1,23 @@
+img,
+a img,
+.wp-caption {
+    &.alignright {
+        float:right;
+        margin:0 0 1em 1em;
+    }
+
+    &.alignleft {
+        float:left;
+        margin:0 1em 1em 0;
+    }
+
+    &.aligncenter {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.extra-large {
+    font-size: 130%;
+}
