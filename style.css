@@ -10,4 +10,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: simple-dining
 
 https://developer.wordpress.org/themes/basics/template-files/
+
+Notes:
+-this project has been developed with Webpack
+-all CSS has been written in SCSS files which are located in _dev/src/scss
+-the minified CSS files used by theme a located in assets/css
 */

@@ -1,7 +1,7 @@
 <?php
 //include any classes needed for the theme
-require_once('assets/classes/style-and-script-controller.php');
-require_once('assets/classes/theme-wrapper.php');
+require_once('classes/style-and-script-controller.php');
+require_once('classes/theme-wrapper.php');
 
 //support post-thumbnails/featured images
 add_theme_support('post-thumbnails');
