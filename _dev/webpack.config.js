@@ -14,27 +14,29 @@ module.exports = {
        theme: './src/js/index.js'
     },
     output: {
-       path: path.resolve(__dirname) + '../../assets/',
-       filename: devMode ? 'js/[name].min.js' : 'js/[name].min.js',
+       path: path.resolve(__dirname),
+       filename: devMode ? '[name].min.js' : '../assets/js/[name].min.js',
     },
-   watch: devMode,
-  optimization: {
-      minimizer: [
-        new UglifyJSPlugin({
-          cache: true,
-          parallel: true,
-          sourceMap: devMode
-        }),
-        new OptimizeCSSAssetsPlugin({})
-      ]
-  },
+    watch: devMode,
+    optimization: {
+        minimizer: [
+            new UglifyJSPlugin(
+                {
+                    cache: true,
+                    parallel: true,
+                    sourceMap: devMode
+                }
+            ),
+            new OptimizeCSSAssetsPlugin({})
+        ]
+    },
     plugins: [
         // extract css into dedicated file
         new MiniCssExtractPlugin(
             {
-                filename: devMode ? 'css/[name].min.css' : 'css/[name].min.css'
+                filename: devMode ? 'css/[name].min.css' : '../assets/css/[name].min.css'
             }
-        )
+        ),
     ],
     module: {
         rules: [
@@ -59,12 +61,30 @@ module.exports = {
             {
                 test: /\.(sass|scss)$/,
                 use: [
-                    devMode ? "style-loader" : MiniCssExtractPlugin.loader,
-                    "css-loader", // translates CSS into CommonJS
-                    "sass-loader" // compiles Sass to CSS
+                        {
+                            loader: devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+                        },
+                        {
+                            loader: "css-loader",
+                            options: {
+                                sourceMap: true
+                            }
+                        },
+                        {
+                            loader: "sass-loader",
+                            options: {
+                                sourceMap: true
+                            }
+                        }
                 ]
             }
-
         ]
-    }
+    },
+    devServer: {
+        // Display only errors to reduce the amount of output.
+        //stats: "errors-only",
+        host: process.env.HOST, // Defaults to `localhost`
+        port: 3000, // Defaults to 8080
+        open: false, // Open the page in browser
+    },
 };

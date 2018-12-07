@@ -10,7 +10,7 @@ import '../scss/build.scss';
 
         var theme = {
             init: function () {
-                console.log('Hello Shane!');
+                console.log('Hello Kimi!');
             }
         }
     }

@@ -19,8 +19,8 @@ class StyleAndScriptController {
         add_action( 'wp_enqueue_scripts', [ $this, 'dequeue_js_files' ], 999 );
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_theme_styles' ], 999 );
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_theme_scripts' ], 999 );
-        add_filter( 'clean_url', [ $this, 'defer_script_loading' ], 11, 1 );
-        add_filter( 'style_loader_tag', [ $this, 'preload_stylesheets' ], 11, 4 );
+        //add_filter( 'clean_url', [ $this, 'defer_script_loading' ], 11, 1 );
+        //add_filter( 'style_loader_tag', [ $this, 'preload_stylesheets' ], 11, 4 );
     }
 
     //dequeues css files
@@ -46,12 +46,15 @@ class StyleAndScriptController {
 
             $theme_css = '/assets/css/theme.min.css';
             $cache_bust = '?v='.filemtime( get_stylesheet_directory() . $theme_css );
-            wp_enqueue_style(
-                'simple-dining',
-                get_stylesheet_directory_uri() . $theme_css . $cache_bust,
-                array(),
-                NULL
-            );
+
+            if(! $this->is_webpack_dev_server() ){
+                wp_enqueue_style(
+                    'simple-dining',
+                    get_stylesheet_directory_uri() . $theme_css . $cache_bust,
+                    array(),
+                    NULL
+                );
+            }
         }
     }
 
@@ -60,9 +63,16 @@ class StyleAndScriptController {
             global $wp_version, $post;
             $slug = $post ? $post->post_name : '';
 
-            $theme_js = '/assets/js/theme.min.js';
-            $script_location = get_stylesheet_directory_uri() . $theme_js;
-            $cache_bust = '?v='.filemtime( get_stylesheet_directory() . $theme_js );
+            $theme_js = 'theme.min.js';
+
+            if( $this->is_webpack_dev_server() ){
+                $script_location ='http://localhost:3000/' . $theme_js;
+                $cache_bust = '';
+            }
+            else {
+                $script_location = get_stylesheet_directory_uri() . '/assets/js/' . $theme_js;
+                $cache_bust = '?v='.filemtime( get_stylesheet_directory() . '/assets/js/' . $theme_js );
+            }
 
             //jquery from wordpress
             wp_enqueue_script(
@@ -100,6 +110,15 @@ class StyleAndScriptController {
             $html = $link;
         }
         return $html;
+    }
+
+    public function is_webpack_dev_server(){
+        if( ! defined( 'WP_ENV' ) || WP_ENV !== 'dev' ){
+			return false;
+		}
+
+        $socket = @fsockopen('localhost', 3000, $errno, $errstr, 1);
+        return $socket ? true : false;
     }
 }
 

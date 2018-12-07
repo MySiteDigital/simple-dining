@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "webpack-cli": "^3.1.2",
-    "webpack": "^4.27.0"
+    "browser-sync": "^2.26.3",
+    "webpack": "^4.27.0",
+    "webpack-cli": "^3.1.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -17,11 +18,13 @@
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
-    "uglifyjs-webpack-plugin": "^2.0.1"
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack-dev-server": "^3.1.10"
   },
   "scripts": {
     "build": "webpack --mode production",
-    "watch": "webpack --mode development --env.dist=false"
+    "watch": "webpack --mode development --env.dist=false",
+    "dev": "webpack-dev-server --mode development"
   },
   "keywords": [],
   "author": "LABCAT",
