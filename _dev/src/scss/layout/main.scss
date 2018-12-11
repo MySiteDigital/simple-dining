@@ -1,0 +1,9 @@
+
+article {
+    max-width: 100%;
+    @include bp(min-lg){
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+}
