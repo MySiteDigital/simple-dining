@@ -1,23 +1,18 @@
-img,
-a img,
-.wp-caption {
-    &.alignright {
-        float:right;
-        margin:0 0 1em 1em;
+.entry-content {
+
+    .alignwide {
+        margin-left  : -200px;
+        margin-right : -200px;
+        max-width    : 100%;
+        @include bp(min-lg) {
+            max-width    : 1024px;
+        }
     }
 
-    &.alignleft {
-        float:left;
-        margin:0 1em 1em 0;
+    .alignfull {
+        margin-left  : calc( -100vw / 2 + 100% / 2 );
+        margin-right : calc( -100vw / 2 + 100% / 2 );
+        max-width    : 100vw;
     }
 
-    &.aligncenter {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-.extra-large {
-    font-size: 130%;
 }
