@@ -8,6 +8,9 @@
 @import 'base/html-elements';
 @import 'base/typography';
 
+/* base */
+@import 'components/utilities';
 
 /* layout */
 @import 'layout/main';
+@import 'layout/footer';
