@@ -2,6 +2,7 @@
 //include any classes needed for the theme
 require_once( 'classes/style-and-script-controller.php' );
 require_once( 'classes/theme-customizer.php' );
+require_once( 'classes/theme-templates.php' );
 require_once( 'classes/theme-wrapper.php' );
 
 //add theme support for various features
