@@ -35,12 +35,12 @@ var mobileNav = {
         if(headerWidth <= (mobileNav.logoWidth + mainNavWidth)){
             mobileNav.mainNav.hide();
             mobileNav.mobileIcons.show();
-            mobileNav.openButton.show();
+            mobileNav.openButton.css('display', 'block');
         }
         else {
             mobileNav.mainNav.show();
             mobileNav.mobileIcons.hide();
-            mobileNav.openButton.hide();
+            mobileNav.openButton.css('display', 'none');
         }
     }
 }

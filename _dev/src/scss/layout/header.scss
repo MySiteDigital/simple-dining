@@ -1,11 +1,41 @@
 #header {
     display: flex;
-    padding: 25px 20px 20px;
+    padding: 10px 10px 5px;
     background: $ocean-boat-blue;
     border-bottom: 5px groove $gamboge;
 
+    @include bp(min-md){
+        padding: 20px 20px 15px;
+    }
+
+    @include bp(min-lg){
+        padding: 25px 25px 20px;
+    }
+
     img {
         display: block;
+    }
+}
+
+#site-title {
+    border-bottom: 3px solid transparent;
+    color: $gamboge;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.4rem;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &.custom-logo-link {
+        display: inline-block;
+        vertical-align: middle;
+        max-width: 125px;
+        height: 75px;
+        font-size: 3rem;
+    }
+
+    &:hover {
+        border-bottom: 3px solid $seashell;
+        color: $seashell;
     }
 }
 
@@ -15,25 +45,22 @@
     ul {
         display: flex;
         align-items: center;
+        justify-content: flex-end;
         margin: 0;
         padding: 0;
 
         li {
             display: inline;
+            flex-shrink:0;
             padding-left: 40px;
-            font-family: 'Oswald', sans-serif;
             list-style: none;
 
-            a {
-                color: $gamboge;
-                font-size: 2.4rem;
-                text-decoration: none;
-                text-transform: uppercase;
+            &:first-child {
+                padding-left: 0;
+            }
 
-                &:hover {
-                    border-bottom: 3px solid $seashell;
-                    color: $seashell;
-                }
+            a {
+                @extend #site-title;
             }
 
             &.current_page_item a {

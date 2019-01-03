@@ -1,5 +1,6 @@
 <?php
 //include any classes needed for the theme
+require_once( 'classes/call-now-menu-walker.php' );
 require_once( 'classes/style-and-script-controller.php' );
 require_once( 'classes/theme-customizer.php' );
 require_once( 'classes/theme-menus.php' );
@@ -21,6 +22,12 @@ add_theme_support( 'align-wide' );
 //hide the admin toolbar from the front end
 show_admin_bar( false );
 
-function icons(){
-    echo get_stylesheet_directory_uri() . '/assets/icons.svg';
+function icons( $echo = true ){
+    $icons = get_stylesheet_directory_uri() . '/assets/icons.svg';
+    if( $echo ){
+        echo $icons;
+    }
+    else {
+        return $icons;
+    }
 }
