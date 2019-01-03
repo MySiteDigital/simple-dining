@@ -1,17 +1,23 @@
 import '../scss/build.scss';
 
-;(function($)
-    {
-        $(document).ready(
+import mobileNav from './components/mobile-nav';
+
+
+;(
+    function($) {
+
+        jQuery(document).ready(
             function() {
-                theme.init();
+
             }
         );
 
-        var theme = {
-            init: function () {
-                console.log('Hello Kimi!');
+        jQuery(window).on(
+            'load',
+            function() {
+                mobileNav.init();
             }
-        }
+        );
+
     }
 )(jQuery);

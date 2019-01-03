@@ -1,0 +1,8 @@
+#hero {
+    height: calc(100vh - 95px);
+    background-size: cover;
+    background-position: center center;
+    @include bp(min-md){
+        height: calc(100vh - 125px);
+    }
+}

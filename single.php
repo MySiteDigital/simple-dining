@@ -1,9 +1,9 @@
 <div class="container">
-	<?php
+    <?php
         while ( have_posts() ) {
-             the_post();
+            the_post();
 
-			 get_template_part( 'template-parts/content/content', 'page' );
+            get_template_part( 'template-parts/content/content', 'page' );
 
         }
     ?>

@@ -12,5 +12,9 @@
 @import 'components/utilities';
 
 /* layout */
+@import 'layout/header';
 @import 'layout/main';
 @import 'layout/footer';
+
+/* pages */
+@import 'pages/home-page';
