@@ -6,7 +6,7 @@ class ThemeMenus {
 
     public function __construct() {
         add_action( 'init', [ $this, 'register_my_menus' ] );
-        add_filter( "wp_nav_menu_items", [ $this,  "limit_call_now_menu"], 10, 2 );
+        add_filter( "wp_nav_menu_items", [ $this,  "create_call_now_button"], 10, 2 );
     }
 
     public function register_my_menus() {
@@ -23,13 +23,73 @@ class ThemeMenus {
          return $title;
     }
 
-    public function limit_call_now_menu( $items, $args ){
+    public function create_call_now_button( $items, $args ){
         if( $args->theme_location === 'call-now-link' ){
             $items = explode( '</a>', $items );
             $items = array_slice( $items, 0, 1 );
-            $items = implode( '</a>', $items );
+            // $items = preg_replace(
+            //         [
+            //             '#^<li[^>]*>#',
+            //             '#</li>$#'
+            //         ],
+            //         '',
+            //         $items[0]
+            //     );
+            // $items = $this->phone_icon( $items );
+            $items = $items[0] . '</a>';
         }
         return $items;
+    }
+
+    public function phone_icon( $anchor ){
+
+         return preg_replace(
+                    '/[^<>]+(?=<[^<>]+>)|[^<>]+$/',
+                    '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+                        <use xlink:href="'. icons( false ) .'#phone-icon"/>
+                    </svg>$0</a>',
+                    $anchor
+                );
+    }
+
+    public static function main_menu(){
+        $main_menu = wp_nav_menu(
+            [
+                'theme_location' => 'main-menu',
+                'container' => 'nav',
+                'container_id' => 'main-nav',
+                'echo' => false
+            ]
+        );
+
+        if( $main_menu ){
+            echo $main_menu;
+            get_template_part( 'template-parts/header/mobile-icons' );
+        }
+    }
+
+    public static function call_now_button(){
+        $call_now = wp_nav_menu(
+            [
+                'theme_location' => 'call-now-link',
+                'container' => '',
+                'depth' => 1 ,
+                'echo' => false,
+                'fallback_cb' => false,
+                'walker' => new Call_Now_Menu_Walker()
+            ]
+        );
+
+        if( $call_now ){
+            echo preg_replace(
+                [
+                    '#^<ul[^>]*>#',
+                    '#</ul>$#'
+                ],
+                '',
+                $call_now
+            );
+        }
     }
 
 }

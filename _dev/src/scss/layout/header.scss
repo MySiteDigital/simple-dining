@@ -1,5 +1,6 @@
 #header {
     display: flex;
+    align-items: center;
     padding: 10px 10px 5px;
     background: $ocean-boat-blue;
     border-bottom: 5px groove $gamboge;
@@ -19,11 +20,7 @@
 
 #site-title {
     border-bottom: 3px solid transparent;
-    color: $gamboge;
-    font-family: 'Oswald', sans-serif;
     font-size: 2.4rem;
-    text-decoration: none;
-    text-transform: uppercase;
 
     &.custom-logo-link {
         display: inline-block;
@@ -35,7 +32,6 @@
 
     &:hover {
         border-bottom: 3px solid $seashell;
-        color: $seashell;
     }
 }
 

@@ -12,6 +12,8 @@ var mobileNav = {
 
     logoWidth: jQuery('.custom-logo-link').width(),
 
+    callNowButtonWidth: jQuery('.call-now-button').width(),
+
     init: function() {
         mobileNav.cloneNav();
         mobileNav.toggleMainNavDisplay();

@@ -9,3 +9,14 @@ html {
 body {
     font-size: 1.6rem;
 }
+
+a {
+    color: $gamboge;
+    font-family: 'Oswald', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+        color: $seashell;
+    }
+}
