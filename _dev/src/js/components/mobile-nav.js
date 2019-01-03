@@ -2,27 +2,26 @@ var mobileNav = {
 
     header: jQuery('#header'),
 
+    hiddenMenu: jQuery('#hidden-menu'),
+
     mainNav: jQuery('#main-nav'),
 
     clonedNav: '',
 
-    mobileIcons: jQuery('#mobile-icons'),
+    mobileIcons: jQuery('.mobile-icons'),
 
     openButton: jQuery('#open-menu'),
 
-    logoWidth: jQuery('.custom-logo-link').width(),
+    closeButton: jQuery('#close-menu'),
 
-    callNowButtonWidth: jQuery('.call-now-button').width(),
+    callNowButton: jQuery('.call-now-button'),
+
+    logoWidth: jQuery('.custom-logo-link').width(),
 
     init: function() {
         mobileNav.cloneNav();
         mobileNav.toggleMainNavDisplay();
-
-        jQuery(window).resize(
-            function(){
-                mobileNav.toggleMainNavDisplay();
-            }
-        );
+        mobileNav.activateListeners();
     },
 
     cloneNav: function(){
@@ -34,16 +33,53 @@ var mobileNav = {
     toggleMainNavDisplay: function(){
         let headerWidth = mobileNav.header.width();
         let mainNavWidth = mobileNav.clonedNav.width();
-        if(headerWidth <= (mobileNav.logoWidth + mainNavWidth)){
+        let callNowButtonWidth = mobileNav.callNowButton.width();
+        if(headerWidth <= (mobileNav.logoWidth + mainNavWidth + callNowButtonWidth)){
+            mobileNav.header.addClass('hidden-menu');
+            mobileNav.hiddenMenu.addClass('hidden-menu');
             mobileNav.mainNav.hide();
             mobileNav.mobileIcons.show();
             mobileNav.openButton.css('display', 'block');
         }
         else {
+            mobileNav.header.removeClass('hidden-menu');
+            mobileNav.hiddenMenu.removeClass('hidden-menu');
             mobileNav.mainNav.show();
             mobileNav.mobileIcons.hide();
             mobileNav.openButton.css('display', 'none');
         }
+    },
+
+    activateListeners: function(){
+        jQuery(window).resize(
+            function(){
+                mobileNav.toggleMainNavDisplay();
+            }
+        );
+
+        mobileNav.openButton.on(
+            'click',
+            function(e){
+                mobileNav.hiddenMenu.animate(
+                    {
+                        left: 0
+                    },
+                    500
+                );
+            }
+        );
+
+        mobileNav.closeButton.on(
+            'click',
+            function(e){
+                mobileNav.hiddenMenu.animate(
+                    {
+                        left: '-100%'
+                    },
+                    500
+                );
+            }
+        );
     }
 }
 

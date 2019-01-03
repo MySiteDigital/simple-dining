@@ -52,19 +52,18 @@ class ThemeMenus {
                 );
     }
 
-    public static function main_menu(){
+    public static function main_menu( $container_id = 'main-nav' ){
         $main_menu = wp_nav_menu(
             [
                 'theme_location' => 'main-menu',
                 'container' => 'nav',
-                'container_id' => 'main-nav',
+                'container_id' => $container_id,
                 'echo' => false
             ]
         );
 
         if( $main_menu ){
             echo $main_menu;
-            get_template_part( 'template-parts/header/mobile-icons' );
         }
     }
 

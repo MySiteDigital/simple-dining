@@ -18,7 +18,7 @@
     }
 }
 
-#site-title {
+.site-title {
     border-bottom: 3px solid transparent;
     font-size: 2.4rem;
 
@@ -31,7 +31,7 @@
     }
 
     &:hover {
-        border-bottom: 3px solid $seashell;
+        border-bottom: 3px solid $yellow-green;
     }
 }
 
@@ -56,12 +56,12 @@
             }
 
             a {
-                @extend #site-title;
+                @extend .site-title;
             }
 
             &.current_page_item a {
-                border-bottom: 3px solid $yellow-green;
-                color: $yellow-green;
+                border-bottom: 3px solid $seashell;
+                color: $seashell;
             }
         }
     }
@@ -83,11 +83,60 @@
 
     svg {
         display: block;
-        width: 48px;
-        fill: $gamboge;
+        width: 36px;
+        fill: $seashell;
+
+        @include bp(min-md){
+            width: 48px;
+        }
+    }
+
+    &:hover svg {
+        fill: $yellow-green;
     }
 }
 
-#mobile-icons {
+.mobile-icons {
     margin-left: auto;
+}
+
+#hidden-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    padding: 10px;
+    width: 100%;
+    min-height: 100vh;
+    background: $ocean-boat-blue;
+
+    &:not(.hidden-menu) {
+        left: -100%!important;
+    }
+
+    #close-menu {
+        display: block;
+    }
+}
+
+#mobile-nav {
+    clear: both;
+}
+
+#hidden-menu,
+#header.hidden-menu {
+    @extend .clearfix;
+    display: block;
+
+    .custom-logo-link {
+        float: left;
+    }
+
+    .mobile-icons,
+    .call-now-button {
+        float: right;
+    }
+
+    .call-now-button {
+        clear: right;
+    }
 }
