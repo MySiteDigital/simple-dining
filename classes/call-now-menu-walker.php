@@ -9,7 +9,7 @@ class Call_Now_Menu_Walker extends Walker_Nav_Menu {
           return;
       }
       $output .= '
-                <a href="' . $item->url . '" class="call-now-button">
+                <a href="' . $item->url . '" class="call-now-button full-size">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
                         <use xlink:href="'. icons( false ) .'#phone-icon"/>
                     </svg>' .

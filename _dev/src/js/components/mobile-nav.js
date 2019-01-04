@@ -16,6 +16,8 @@ var mobileNav = {
 
     callNowButton: jQuery('.call-now-button'),
 
+    clonedCallNowButton: '',
+
     logoWidth: jQuery('.custom-logo-link').width(),
 
     init: function() {
@@ -26,17 +28,22 @@ var mobileNav = {
 
     cloneNav: function(){
         mobileNav.clonedNav = mobileNav.mainNav.clone();
+        mobileNav.clonedCallNowButton = mobileNav.callNowButton.clone();
         mobileNav.clonedNav.attr('id', 'cloned-nav');
+        mobileNav.clonedCallNowButton.attr('id', 'cloned-cta');
+        mobileNav.clonedCallNowButton.css('width', mobileNav.callNowButton.outerWidth());
         jQuery('body').append(mobileNav.clonedNav);
+        jQuery('body').append(mobileNav.clonedCallNowButton);
     },
 
     toggleMainNavDisplay: function(){
         let headerWidth = mobileNav.header.width();
         let mainNavWidth = mobileNav.clonedNav.width();
-        let callNowButtonWidth = mobileNav.callNowButton.width();
+        let callNowButtonWidth = mobileNav.clonedCallNowButton.outerWidth(true);
         if(headerWidth <= (mobileNav.logoWidth + mainNavWidth + callNowButtonWidth)){
             mobileNav.header.addClass('hidden-menu');
             mobileNav.hiddenMenu.addClass('hidden-menu');
+            mobileNav.callNowButton.removeClass('full-size');
             mobileNav.mainNav.hide();
             mobileNav.mobileIcons.show();
             mobileNav.openButton.css('display', 'block');
@@ -44,6 +51,7 @@ var mobileNav = {
         else {
             mobileNav.header.removeClass('hidden-menu');
             mobileNav.hiddenMenu.removeClass('hidden-menu');
+            mobileNav.callNowButton.addClass('full-size');
             mobileNav.mainNav.show();
             mobileNav.mobileIcons.hide();
             mobileNav.openButton.css('display', 'none');

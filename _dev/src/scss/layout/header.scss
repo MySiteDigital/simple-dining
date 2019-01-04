@@ -1,9 +1,9 @@
-#header {
+#header, #hidden-menu {
     display: flex;
     align-items: center;
     padding: 10px 10px 5px;
-    background: $ocean-boat-blue;
-    border-bottom: 5px groove $gamboge;
+    background: $french-blue;
+    border-bottom: 5px solid $gamboge;
 
     @include bp(min-md){
         padding: 20px 20px 15px;
@@ -22,42 +22,37 @@
     border-bottom: 3px solid transparent;
     font-size: 2.4rem;
 
+    &:hover {
+        border-bottom: 3px solid $yellow-green;
+    }
+
     &.custom-logo-link {
         display: inline-block;
         vertical-align: middle;
         max-width: 125px;
         height: 75px;
         font-size: 3rem;
-    }
 
-    &:hover {
-        border-bottom: 3px solid $yellow-green;
+        &:hover {
+            border-bottom: none;
+        }
     }
 }
 
 #main-nav,
 #cloned-nav {
+    margin-top: -2.5px;
     margin-left: auto;
+    
     ul {
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        margin: 0;
-        padding: 0;
 
         li {
             display: inline;
             flex-shrink:0;
             padding-left: 40px;
-            list-style: none;
-
-            &:first-child {
-                padding-left: 0;
-            }
-
-            a {
-                @extend .site-title;
-            }
 
             &.current_page_item a {
                 border-bottom: 3px solid $seashell;
@@ -67,10 +62,54 @@
     }
 }
 
-#cloned-nav {
-    display: block!important;
-    position: fixed;
-    bottom: -1000px;
+#main-nav,
+#cloned-nav,
+#mobile-nav {
+
+    ul {
+        margin: 0;
+        padding: 0;
+
+        li {
+            list-style: none;
+        }
+    }
+
+    a {
+        @extend .site-title;
+    }
+
+}
+
+#mobile-nav {
+
+    padding-top: 5px;
+
+    @include bp(min-md){
+        padding-top: 15px;
+    }
+
+    @include bp(min-lg){
+        padding-top: 20px;
+    }
+
+    ul {
+        border-top: 3px solid $seashell;
+
+        li {
+            padding: 13px 20px 10px;
+            border-bottom: 3px solid $seashell;
+        }
+    }
+
+    a {
+        display: flex;
+        border-bottom: none;
+
+        &:hover {
+            border-bottom: none;
+        }
+    }
 }
 
 #open-menu,
@@ -85,10 +124,6 @@
         display: block;
         width: 36px;
         fill: $seashell;
-
-        @include bp(min-md){
-            width: 48px;
-        }
     }
 
     &:hover svg {
@@ -104,10 +139,10 @@
     position: fixed;
     top: 0;
     left: -100%;
-    padding: 10px;
     width: 100%;
     min-height: 100vh;
-    background: $ocean-boat-blue;
+    background: $french-blue;
+    border-bottom: none;
 
     &:not(.hidden-menu) {
         left: -100%!important;
@@ -139,4 +174,12 @@
     .call-now-button {
         clear: right;
     }
+}
+
+
+
+#cloned-nav, #cloned-cta {
+    display: block!important;
+    position: fixed;
+    bottom: -1000px;
 }
