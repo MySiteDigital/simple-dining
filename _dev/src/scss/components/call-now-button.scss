@@ -3,14 +3,16 @@
     flex-shrink: 0;
     align-items: center;
     padding: 4px 8px 4px 3px;
+    background-color: $yellow-green;
+    background-color: white;
+    border: 2px solid $yellow-green;
     border-radius: 5px;
-    border: 2px solid $seashell;
-    color: $seashell;
+    color: $yellow-green;
     font-size: 1.8rem;
 
     svg {
         width: 21px;
-        fill: $seashell;
+        fill: $yellow-green;
         transform: rotate(270deg);
     }
 
@@ -26,10 +28,11 @@
 
     &:hover {
 
-        border: 2px solid $yellow-green;
+        border: 2px solid $ruby;
+        color: $ruby;
 
         svg {
-            fill: $yellow-green;
+            fill: $ruby;
         }
     }
 }

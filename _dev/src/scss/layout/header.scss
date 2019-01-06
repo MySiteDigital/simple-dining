@@ -2,8 +2,8 @@
     display: flex;
     align-items: center;
     padding: 10px 10px 5px;
-    background: $french-blue;
-    border-bottom: 5px solid $gamboge;
+    background: $ocean-boat-blue;
+    border-bottom: 5px solid $sea-serpent;
 
     @include bp(min-md){
         padding: 20px 20px 15px;
@@ -23,7 +23,7 @@
     font-size: 2.4rem;
 
     &:hover {
-        border-bottom: 3px solid $yellow-green;
+        border-bottom: 3px solid $yellow-orange;
     }
 
     &.custom-logo-link {
@@ -43,7 +43,7 @@
 #cloned-nav {
     margin-top: -2.5px;
     margin-left: auto;
-    
+
     ul {
         display: flex;
         align-items: center;
@@ -55,8 +55,7 @@
             padding-left: 40px;
 
             &.current_page_item a {
-                border-bottom: 3px solid $seashell;
-                color: $seashell;
+                border-bottom: 3px solid $yellow-green;
             }
         }
     }
@@ -72,6 +71,10 @@
 
         li {
             list-style: none;
+
+            &.current_page_item a {
+                color: $yellow-green;
+            }
         }
     }
 
@@ -94,11 +97,11 @@
     }
 
     ul {
-        border-top: 3px solid $seashell;
+        border-top: 1px solid rgba(255, 255, 255, 0.5);
 
         li {
             padding: 13px 20px 10px;
-            border-bottom: 3px solid $seashell;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         }
     }
 
@@ -123,11 +126,11 @@
     svg {
         display: block;
         width: 36px;
-        fill: $seashell;
+        fill: $yellow-green;
     }
 
     &:hover svg {
-        fill: $yellow-green;
+        fill: $ruby;
     }
 }
 
@@ -141,7 +144,7 @@
     left: -100%;
     width: 100%;
     min-height: 100vh;
-    background: $french-blue;
+    background: $ocean-boat-blue;
     border-bottom: none;
 
     &:not(.hidden-menu) {
