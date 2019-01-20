@@ -1,9 +1,14 @@
+main {
+    padding: 24px 16px;
+    line-height: 1.4;
+
+    @include bp(min-lg){
+        padding: 20px 0;
+    }
+}
+
 
 article {
-    max-width: 100%;
-    @include bp(min-lg){
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
+    max-width: 600px;
+    margin: 0 auto;
 }

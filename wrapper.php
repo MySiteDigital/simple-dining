@@ -6,8 +6,9 @@
 
         <!-- wordpress head functions -->
         <link href="https://fonts.googleapis.com/css?family=Oswald:500,600" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
         <?php wp_head(); ?>
-        
+
         <script>
             <?php
                 include 'assets/js/loadCSS.js';

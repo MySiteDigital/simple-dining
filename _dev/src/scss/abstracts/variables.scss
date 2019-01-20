@@ -1,6 +1,13 @@
-$ocean-boat-blue: #0267c1;
 $ocean-boat-blue: #2569E6;
 $sea-serpent: #49c6e5;
 $yellow-green: #8fc93a;
 $yellow-orange: #ffbc42;
 $ruby: #d81159;
+
+$my-black: #333;
+$my-white: #fefefe;
+$my-grey: #eee;
+
+/* (100vw - 100%) is used to determine the scrollbar width */
+
+$scroll-bar-width: calc(100vw - (100vw - 100%));

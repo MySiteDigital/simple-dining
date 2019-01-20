@@ -16,6 +16,11 @@
     img {
         display: block;
     }
+
+    a {
+        font-family: 'Oswald', sans-serif;
+        text-transform: uppercase;
+    }
 }
 
 .site-title {
@@ -52,6 +57,7 @@
         li {
             display: inline;
             flex-shrink:0;
+            margin: 0;
             padding-left: 40px;
 
             &.current_page_item a {
