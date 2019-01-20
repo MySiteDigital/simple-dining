@@ -1,0 +1,22 @@
+#page-not-found-nav {
+    @extend #mobile-nav;
+
+    ul {
+        border-color: $sea-serpent;
+
+        li {
+            margin: 0;
+            padding: 16px 8px;
+            border-color: $sea-serpent;
+        }
+    }
+
+    a {
+        border-bottom: 0;
+
+        &:hover {
+            border-bottom: 0;
+        }
+
+    }
+}

@@ -6,6 +6,7 @@
 
 /* components */
 @import 'components/buttons';
+@import 'components/mobile-nav';
 @import 'components/utilities';
 
 /* base */
@@ -19,4 +20,5 @@
 @import 'layout/footer';
 
 /* pages */
+@import 'pages/404-page';
 @import 'pages/home-page';
