@@ -1,6 +1,7 @@
 import '../scss/build.scss';
 
 import mobileNav from './components/mobile-nav';
+import typography from './components/typography';
 
 
 ;(
@@ -8,7 +9,7 @@ import mobileNav from './components/mobile-nav';
 
         jQuery(document).ready(
             function() {
-
+                typography.init();
             }
         );
 
