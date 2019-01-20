@@ -1,5 +1,5 @@
 p.has-drop-cap:not(:focus)::first-letter {
-    margin: 0 10px 0 0;
+    margin: 0 4px 0 0;
     font-family: 'Oswald', sans-serif;
     font-size: 5.6rem;
     font-weight: 400;
@@ -15,7 +15,7 @@ p.has-drop-cap:not(:focus)::first-letter {
     }
 
     figcaption {
-        margin: 10px 0 0;
+        margin: 12px 0 0;
         font-size: 1.6rem;
         text-align: left;
     }
@@ -109,6 +109,8 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-embed-youtube,
 .wp-block-embed-vimeo {
 
+    margin-bottom: 24px;
+
     .wp-block-embed__wrapper {
         position: relative;
         height: 100%;
@@ -127,6 +129,7 @@ p.has-drop-cap:not(:focus)::first-letter {
     }
 
     figcaption {
+        margin: 12px 0 0;
         font-size: 1.6rem;
         text-align: left;
     }

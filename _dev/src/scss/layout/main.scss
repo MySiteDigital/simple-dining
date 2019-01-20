@@ -1,9 +1,15 @@
-main {
-    padding: 24px 16px;
+main:not(.home) {
+    min-height: calc(100vh - 95px);
+    padding: 24px 16px 66px;
     line-height: 1.4;
 
+    @include bp(min-md){
+        min-height: calc(100vh - 115px);
+    }
+
     @include bp(min-lg){
-        padding: 20px 0;
+        min-height: calc(100vh - 125px);
+        padding: 24px 0 66px;
     }
 }
 

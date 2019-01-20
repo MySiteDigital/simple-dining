@@ -20,6 +20,10 @@
     a {
         font-family: 'Oswald', sans-serif;
         text-transform: uppercase;
+
+        &:hover {
+            color: $yellow-orange;
+        }
     }
 }
 

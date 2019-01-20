@@ -10,4 +10,13 @@
     @include bp(min-lg){
         padding: 25px 25px 20px;
     }
+
+    a {
+        font-family: 'Oswald', sans-serif;
+        text-transform: uppercase;
+
+        &:hover {
+            color: $yellow-orange;
+        }
+    }
 }

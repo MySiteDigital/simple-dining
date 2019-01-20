@@ -57,7 +57,7 @@ a {
     text-decoration: none;
 
     &:hover {
-        color: $yellow-orange;
+        color: $ocean-boat-blue;
     }
 }
 
@@ -82,4 +82,8 @@ ol {
 
 blockquote {
     margin: 0 0 16px;
+}
+
+svg {
+    fill: $ocean-boat-blue;
 }
