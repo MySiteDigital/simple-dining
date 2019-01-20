@@ -2,14 +2,14 @@ var typography = {
 
     bodyWidth: jQuery('body').width(),
 
-    windowWidth: jQuery(window).width(),
+    windowWidth: window.outerWidth,
 
     fullAlignedImage: jQuery('.wp-block-image.alignfull'),
 
     init: function() {
         let scrollBarWidth = this.windowWidth - this.bodyWidth;
         if(scrollBarWidth && this.fullAlignedImage.length){
-            let margin = '24px calc(-50vw + 50% - 9px)';
+            let margin = '24px calc(-50vw + 50% - 8.5px)';
             this.fullAlignedImage.css(
                 'margin',
                 margin

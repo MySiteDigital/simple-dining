@@ -4,14 +4,14 @@
 @import 'abstracts/mixins';
 @import 'abstracts/variables';
 
+/* components */
+@import 'components/buttons';
+@import 'components/utilities';
+
 /* base */
 @import 'base/forms';
 @import 'base/html-elements';
 @import 'base/typography';
-
-/* base */
-@import 'components/buttons';
-@import 'components/utilities';
 
 /* layout */
 @import 'layout/header';
