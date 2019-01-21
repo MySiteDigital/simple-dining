@@ -94,6 +94,12 @@ ol {
 
 blockquote {
     margin: 0 0 16px;
+    padding: 12px 24px;
+    border-left : 4px solid $ocean-boat-blue;
+
+    p {
+        margin: 0;
+    }
 }
 
 svg {
