@@ -1,0 +1,21 @@
+.entry-footer {
+
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+    padding: 8px;
+    border-top: 1px solid $my-grey;
+    border-bottom: 1px solid $my-grey;
+
+
+    span {
+        display: flex;
+        align-items: center;
+        padding-right: 8px;
+    }
+
+    svg {
+        margin-right: 4px;
+    }
+
+}

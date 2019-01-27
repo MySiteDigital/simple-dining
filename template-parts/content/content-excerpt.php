@@ -26,55 +26,44 @@
 	</div><!-- .entry-content -->
 
     <footer class="entry-footer">
+
         <span class="byline">
-            %1$s
+
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+                <use xlink:href="<?php icons(); ?>#person"/>
+            </svg>
+
             <span class="author vcard">
                 <a class="url" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
                     <?php echo esc_html( get_the_author() ); ?>
                 </a>
             </span>
+
         </span>
-		<?php
 
+        <span class="posted-on">
 
-            // $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-    		// if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-    		// 	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-    		// }
-            //
-    		// $time_string = sprintf(
-    		// 	$time_string,
-    		// 	esc_attr( get_the_date( DATE_W3C ) ),
-    		// 	esc_html( get_the_date() ),
-    		// 	esc_attr( get_the_modified_date( DATE_W3C ) ),
-    		// 	esc_html( get_the_modified_date() )
-    		// );
-            //
-    		// printf(
-    		// 	'<span class="posted-on">%1$s<a href="%2$s" rel="bookmark">%3$s</a></span>',
-    		// 	twentynineteen_get_icon_svg( 'watch', 16 ),
-    		// 	esc_url( get_permalink() ),
-    		// 	$time_string
-    		// );
-            //
-            // // Edit post link.
-    		// edit_post_link(
-    		// 	sprintf(
-    		// 		wp_kses(
-    		// 			/* translators: %s: Name of current post. Only visible to screen readers. */
-    		// 			__( 'Edit <span class="screen-reader-text">%s</span>', 'twentynineteen' ),
-    		// 			array(
-    		// 				'span' => array(
-    		// 					'class' => array(),
-    		// 				),
-    		// 			)
-    		// 		),
-    		// 		get_the_title()
-    		// 	),
-    		// 	'<span class="edit-link">' . twentynineteen_get_icon_svg( 'edit', 16 ),
-    		// 	'</span>'
-    		// );
-         ?>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+                <use xlink:href="<?php icons(); ?>#calendar"/>
+            </svg>
+
+            <time class="entry-date published updated" datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>">
+                <?php echo esc_html( get_the_date() ); ?>
+            </time>
+
+        </span>
+
+        <span class="edit-link">
+
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+                <use xlink:href="<?php icons(); ?>#edit"/>
+            </svg>
+
+            <a href="<?php echo get_edit_post_link( get_the_ID() ); ?>" target="_blank">
+                <?php the_title(); ?>
+            </a>
+        </span>
+
 	</footer><!-- .entry-footer -->
 
 </article>
