@@ -31,3 +31,20 @@ function icons( $echo = true ){
         return $icons;
     }
 }
+
+
+register_sidebar(
+    [
+    	'id'          => 'footer-content',
+    	'name'        => 'Footer Content',
+    	'description' => __( 'Allow\'s cusomt content to be added to the footer.', 'text_domain' ),
+    ]
+);
+
+function footer_widget(){
+    if ( is_active_sidebar( 'footer-content' ) ) {
+        echo '<ul id="footer-content" class="widget-area">';
+            dynamic_sidebar( 'footer-content' );
+        echo '</ul>';
+    }
+}
