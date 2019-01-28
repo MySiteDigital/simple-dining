@@ -1,0 +1,26 @@
+.wp-block-dining-dashboard-get-directions {
+    margin: 0 0 20px;
+
+    @include bp(min-sm){
+        display: flex;
+    }
+
+    dl {
+        width: 99%;
+        margin: 0 0 20px;
+    }
+
+    dt {
+        width: 24px;
+    }
+
+    dd {
+        width: calc(100% - 40px);
+        margin: -6px 0 0 16px;
+        text-align: left;
+    }
+
+    a {
+        align-self: baseline;
+    }
+}

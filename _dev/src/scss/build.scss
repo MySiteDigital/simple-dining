@@ -4,6 +4,11 @@
 @import 'abstracts/mixins';
 @import 'abstracts/variables';
 
+
+/* blocks */
+@import 'blocks/get-directions-block';
+@import 'blocks/opening-hours-block';
+
 /* components */
 @import 'components/buttons';
 @import 'components/content-excerpt';

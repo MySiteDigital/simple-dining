@@ -1,0 +1,53 @@
+.wp-block-dining-dashboard-opening-hours {
+
+    dl {
+        border-bottom: 1px solid $my-grey;
+    }
+
+    dt {
+        width: 60px;
+        margin: 0;
+        padding-top: 16px;
+        border-top: 1px solid $my-grey;
+
+        @include bp(min-sm){
+            width: 120px;
+        }
+    }
+
+    dd {
+        width: calc(100% - 60px);
+        margin: 0;
+        padding: 16px 0 8px;
+        border-top: 1px solid $my-grey;
+        text-align: right;
+
+        @include bp(min-sm){
+            width: calc(100% - 120px);
+        }
+
+        time {
+            display: inline-block;
+            margin-bottom: 8px;
+
+            &.open-time {
+                width: 84px;
+                text-align: right;
+            }
+        }
+    }
+
+    .short-title {
+        @include bp(min-sm){
+            display: none;
+        }
+    }
+
+    .long-title {
+        display: none;
+
+        @include bp(min-sm){
+            display: inline;
+        }
+    }
+}

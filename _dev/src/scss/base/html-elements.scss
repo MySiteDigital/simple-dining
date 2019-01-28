@@ -92,6 +92,25 @@ ol {
     }
 }
 
+dl {
+    display: flex;
+    flex-wrap: wrap;
+
+    dt, dd {
+        margin-bottom: 20px;
+    }
+
+    dt {
+        width: 33%;
+        font-weight: bold;
+    }
+
+    dd {
+        margin-left: auto;
+        width: 66%;
+    }
+}
+
 blockquote {
     margin: 0 0 16px;
     padding: 12px 24px;
@@ -106,4 +125,8 @@ svg {
     width: 24px;
     height: 24px;
     fill: $ocean-boat-blue;
+}
+
+iframe body {
+    background-color: transparent;
 }
