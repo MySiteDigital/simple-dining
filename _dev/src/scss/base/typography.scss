@@ -143,6 +143,7 @@ p.has-drop-cap:not(:focus)::first-letter {
     max-width: 100%;
 }
 
+.wp-block-columns,
 .wp-block-text-columns {
     display: block;
 
@@ -155,7 +156,8 @@ p.has-drop-cap:not(:focus)::first-letter {
         margin: 0 -270px;
     }
 
-    &.columns-2 {
+    &.columns-2,
+    &.has-2-columns {
         .wp-block-column {
             width: 100%;
             margin: 0 0 40px;

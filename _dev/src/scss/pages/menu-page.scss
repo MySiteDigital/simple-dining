@@ -1,0 +1,14 @@
+.menu-container {
+    .entry-header {
+
+
+            @include bp(min-md) {
+                display: flex;
+                margin: 0 calc(-50vw + 332px);
+            }
+
+            @include bp(min-xl) {
+                margin: 0 -270px;
+            }
+    }
+}

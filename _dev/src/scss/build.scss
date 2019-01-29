@@ -7,6 +7,7 @@
 
 /* blocks */
 @import 'blocks/get-directions-block';
+@import 'blocks/menu-item-block';
 @import 'blocks/opening-hours-block';
 
 /* components */
@@ -28,3 +29,4 @@
 /* pages */
 @import 'pages/404-page';
 @import 'pages/home-page';
+@import 'pages/menu-page';

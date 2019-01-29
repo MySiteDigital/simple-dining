@@ -1,4 +1,5 @@
 <!doctype html>
+<html <?php language_attributes(); ?>>
     <head>
         <title><?php wp_title( '|', true, 'right' ); ?></title>
         <meta charset="utf-8">
