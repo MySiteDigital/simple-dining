@@ -149,7 +149,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 
     @include bp(min-md) {
         display: flex;
-        margin: 0 calc(-50vw + 332px);
+        margin: 0 calc(-50vw + 320px);
     }
 
     @include bp(min-xl) {
@@ -163,8 +163,8 @@ p.has-drop-cap:not(:focus)::first-letter {
             margin: 0 0 40px;
 
             @include bp(min-md) {
-                width: 50%;
-                margin: 0 32px 40px;
+                flex-basis: calc(50% - 20px);
+                margin: 0 20px 40px;
             }
         }
     }

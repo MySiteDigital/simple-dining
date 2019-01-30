@@ -1,28 +1,45 @@
 .wp-block-dining-dashboard-menu-item {
     margin: 0;
-    padding: 8px;
+    padding: 12px;
     border: 1px solid $sea-serpent;
-
-    header,
-    .description {
-        display: flex;
-        align-items: flex-start;
-    }
 
     header {
         margin-bottom: 12px;
-
+        display: flex;
+        align-items: flex-start;
         h3 {
-            margin: 0;
+            margin: 0 12px 0 0;
             line-height: 1;
         }
     }
 
     img {
-        max-width: 100px;
-        margin: 4px 12px 0 0;
+        max-width: 150px;
+        max-height: 150px;
+        margin: 0 0 12px 0;
+
         @include bp(min-sm){
+            max-height: none;
+            margin: 4px 12px 0 0;
+        }
+
+        @include bp(min-md){
             max-width: 200px;
+        }
+    }
+
+    .description {
+        @include bp(min-sm){
+            display: flex;
+            align-items: flex-start;
+        }
+
+        @include bp(min-md){
+            display: block;
+        }
+
+        @include bp(min-lg){
+            display: flex;
         }
     }
 
