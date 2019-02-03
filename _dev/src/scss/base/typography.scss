@@ -99,8 +99,13 @@ p.has-drop-cap:not(:focus)::first-letter {
 }
 
 .wp-block-table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+
     td, th {
         padding: 8px;
+        border: 2px solid $my-black;
     }
 }
 
