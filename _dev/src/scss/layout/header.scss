@@ -98,6 +98,10 @@
 
 }
 
+#mobile-nav a:hover {
+    border-color: transparent;
+}
+
 #open-menu,
 #close-menu {
     display: none;
@@ -125,6 +129,7 @@
     position: fixed;
     top: 0;
     left: -100%;
+    z-index: 999;
     width: 100%;
     min-height: 100vh;
     border-bottom: none;

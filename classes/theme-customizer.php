@@ -45,38 +45,39 @@ class ThemeCustomizer {
             'description' => 'Header/Footer Background Colour',
             'css_properties'  => [
                 '#header, #footer, #hidden-menu{background-color: ',
-                'input[type=submit], input:focus, textarea:focus, .button{border: 3px solid ',
+                'input[type=submit], input:focus, textarea:focus, .button{border-color: ',
                 'blockquote{border-left : 4px solid ',
                 'svg{fill: ',
                 '.wp-block-quote.is-large:before{border-left: 4px solid ',
-                '.button {color: '
+                '.button, input[type=submit] {color: '
             ]
         ],
         'header_footer_link_color' => [
             'default'     => '#49c6e5',
             'description' => 'Header/Footer Link Colour',
             'css_properties'  => [
-                '#header,#footer, #page-not-found-nav ul, #page-not-found-nav li {border-color: ',
-                'input {border: 3px solid ',
-                '.wp-block-quote.is-large{border-left: 4px solid ',
-                '.wp-block-dining-dashboard-menu-item{border:2px solid }'
+                '#header a,#mobile-nav a,#footer a,.site-title {color: ',
+                '#header,#footer, #page-not-found-nav ul, #page-not-found-nav ul li {border-color: ',
+                'input, textarea {border-color: ',
+                '.wp-block-quote.is-large{border-color: ',
+                '.wp-block-dining-dashboard-menu-item{border-color: '
             ]
         ],
         'header_footer_link_hover_color' => [
             'default'     => '#ffbc42',
             'description' => 'Header/Footer Link Hover Colour',
             'css_properties'  => [
-                '#main-nav ul li .current_page_item a, mobile-nav ul li .current_page_item a, .call-now-button{border-color ',
-                '.call-now-button{color ',
-                '.call-now-button svg, #footer svg, #open-menu svg, #close-menu svg {fill ',
+                'input:hover, textarea:hover, #header a:hover, .site-title:hover {border-color: ',
+                '#header a:hover,#mobile-nav a:hover, #footer a:hover{color: '
             ]
         ],
         'header_footer_current_page_link_color' => [
             'default'     => '#8fc93a',
             'description' => 'Header/Footer Current Page Link Colour',
             'css_properties'  => [
-                'input:hover, textarea:hover, #main-nav a:hover, #mobile-nav a:hover .site-title:hover {border-color: ',
-                '#header a:hover, #footer a:hover{color: '
+                '#main-nav ul li.current_page_item a, .call-now-button{border-color: ',
+                '#main-nav ul li.current_page_item a, #mobile-nav ul li.current_page_item a, #header .call-now-button{color: ',
+                '.call-now-button svg, #footer svg, #open-menu svg, #close-menu svg {fill: '
             ]
         ],
         'button_hover_color' => [
