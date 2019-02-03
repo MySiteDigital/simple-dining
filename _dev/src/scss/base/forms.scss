@@ -1,6 +1,12 @@
 form {
     width: 360px;
     max-width: 100%;
+
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
 }
 
 input, textarea {

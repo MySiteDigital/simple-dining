@@ -11,7 +11,7 @@ if ( have_posts() ) {
         $hero_image = $hero_image ? ' style="background-image: url(' . $hero_image[0] . ')";' : '';
         echo '
         <div id="hero"' . $hero_image . '>
-            <a href="tel:0226720903" class="button full-size">
+            <a href="/menu/" class="button full-size">
                 View Our Menu
             </a>
         </div>';

@@ -41,7 +41,7 @@ class ThemeCustomizer {
             ]
         ],
         'header_footer_background_color' => [
-            'default'     => '#2569E6',
+            'default'     => '#2569e6',
             'description' => 'Header/Footer Background Colour',
             'css_properties'  => [
                 '#header, #footer, #hidden-menu{background-color: ',
