@@ -46,9 +46,9 @@ class ThemeCustomizer {
             'css_properties'  => [
                 '#header, #footer, #hidden-menu{background-color: ',
                 'input[type=submit], input:focus, textarea:focus, .button{border-color: ',
-                'blockquote{border-left : 4px solid ',
+                'blockquote{border-color: ',
                 'svg{fill: ',
-                '.wp-block-quote.is-large:before{border-left: 4px solid ',
+                'blockquote, .wp-block-quote:not(.is-large):not(.is-style-large), .wp-block-quote.is-large:before{border-color: ',
                 '.button, input[type=submit] {color: '
             ]
         ],
