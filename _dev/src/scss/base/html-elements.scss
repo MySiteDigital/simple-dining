@@ -61,18 +61,6 @@ a {
     }
 }
 
-header,
-footer {
-    a {
-        font-family: 'Oswald', sans-serif;
-        text-transform: uppercase;
-
-        &:hover {
-            color: $yellow-orange;
-        }
-    }
-}
-
 ul, ol {
     margin: 0 0 24px;
     padding: 0 0 0 32px;

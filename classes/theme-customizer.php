@@ -25,6 +25,71 @@ class ThemeCustomizer {
         'Lora:400,400i,700,700i' => 'Lora'
 	];
 
+    private $color_options = [
+        'background_color' => [
+            'default'       => '#fefefe',
+            'description'   =>  'Main Background Colour',
+            'css_properties'    => [
+                'body{background-color: '
+            ]
+        ],
+        'text_color' => [
+            'default'     => '#333333',
+            'description' => 'Main Text Colour',
+            'css_properties'  => [
+                'body{color: '
+            ]
+        ],
+        'header_footer_background_color' => [
+            'default'     => '#2569E6',
+            'description' => 'Header/Footer Background Colour',
+            'css_properties'  => [
+                '#header, #footer, #hidden-menu{background-color: ',
+                'input[type=submit], input:focus, textarea:focus, .button{border: 3px solid ',
+                'blockquote{border-left : 4px solid ',
+                'svg{fill: ',
+                '.wp-block-quote.is-large:before{border-left: 4px solid ',
+                '.button {color: '
+            ]
+        ],
+        'header_footer_link_color' => [
+            'default'     => '#49c6e5',
+            'description' => 'Header/Footer Link Colour',
+            'css_properties'  => [
+                '#header,#footer, #page-not-found-nav ul, #page-not-found-nav li {border-color: ',
+                'input {border: 3px solid ',
+                '.wp-block-quote.is-large{border-left: 4px solid ',
+                '.wp-block-dining-dashboard-menu-item{border:2px solid }'
+            ]
+        ],
+        'header_footer_link_hover_color' => [
+            'default'     => '#ffbc42',
+            'description' => 'Header/Footer Link Hover Colour',
+            'css_properties'  => [
+                '#main-nav ul li .current_page_item a, mobile-nav ul li .current_page_item a, .call-now-button{border-color ',
+                '.call-now-button{color ',
+                '.call-now-button svg, #footer svg, #open-menu svg, #close-menu svg {fill ',
+            ]
+        ],
+        'header_footer_current_page_link_color' => [
+            'default'     => '#8fc93a',
+            'description' => 'Header/Footer Current Page Link Colour',
+            'css_properties'  => [
+                'input:hover, textarea:hover, #main-nav a:hover, #mobile-nav a:hover .site-title:hover {border-color: ',
+                '#header a:hover, #footer a:hover{color: '
+            ]
+        ],
+        'button_hover_color' => [
+            'default'     => '#d81159',
+            'description' => 'Button Hover Colour',
+            'css_properties'  => [
+                '.button:hover {border-color: ',
+                '.button:hover, #header a.call-now-button:hover {color: ',
+                '.button:hover svg, #open-menu:hover, #close-menu:hover {fill: ',
+            ]
+        ]
+    ];
+
     public function __construct() {
         add_action( 'customize_register', [ $this, 'add_customizer_options' ] );
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_google_fonts' ] );
@@ -39,26 +104,6 @@ class ThemeCustomizer {
         		'title'      =>  __( 'Theme Options', 'simple-dining' ),
         		'priority'   => 1000,
     		]
-    	);
-
-    	// Add primary color hue setting and control.
-    	$wp_customize->add_setting(
-    		'background_color',
-    		array(
-    			'default'           => '#ffffff',
-    			'transport'         => 'refresh'
-    		)
-    	);
-
-    	$wp_customize->add_control(
-    		new WP_Customize_Color_Control(
-    			$wp_customize,
-    			'background_color',
-    			array(
-    				'description' => __( 'Main Background Colour', 'simple-dining' ),
-    				'section'     => 'theme_options',
-    			)
-    		)
     	);
 
         $wp_customize->add_setting(
@@ -96,6 +141,28 @@ class ThemeCustomizer {
 			]
         );
 
+        foreach( $this->color_options as $color_option => $color_option_settings ){
+            $wp_customize->add_setting(
+        		$color_option,
+        		[
+        			'default' => $color_option_settings['default'],
+        			'transport'         => 'refresh',
+                    'type' => 'theme_mod',
+                    'capability' => 'edit_theme_options'
+        		]
+        	);
+
+        	$wp_customize->add_control(
+        		new WP_Customize_Color_Control(
+        			$wp_customize,
+        			$color_option,
+        			[
+        				'description' => __( $color_option_settings['description'], 'simple-dining' ),
+        				'section'     => 'theme_options',
+        			]
+        		)
+        	);
+        }
     }
 
     public function theme_font( $font ){
@@ -117,23 +184,25 @@ class ThemeCustomizer {
     public function generate_customizer_css()
     {
         $customizer_css = '';
-        $bg_color = get_theme_mod( 'background_color' );
         $heading_font = $this->theme_font( 'heading' );
         $body_font = $this->theme_font( 'body' );
 
-
-        if( $bg_color != 'ffffff' ){
-            $customizer_css .= 'body{background-color: #' . $bg_color . ';}';
-        }
-
         if ( $body_font ) {
-            $font_pieces = explode( ":", $body_font );
-            $customizer_css .= 'body{font-family: ' . $font_pieces[0] . ';}';
+            $customizer_css .= 'body{font-family: ' . $this->font_choices[$body_font] . ';}';
         }
 
         if ( $heading_font ) {
-            $font_pieces = explode( ":", $heading_font );
-            $customizer_css .= 'h1, h2, h3, h4, h5, h6{font-family: ' . $font_pieces[0] . ';}';
+            $customizer_css .= 'h1, h2, h3, h4, h5, h6, input[type="submit"], #header a, #footer a, .button {font-family: ' . $this->font_choices[$heading_font] . ';}';
+        }
+
+        foreach( $this->color_options as $color_option => $color_option_settings ){
+            $color = get_theme_mod( $color_option );
+            $color = $this->add_missing_hash( $color );
+            if( $color && $color != $color_option_settings['default'] ){
+                foreach( $color_option_settings['css_properties'] as $css_property ){
+                    $customizer_css .= $css_property . $color . ';}';
+                }
+            }
         }
 
         if( $customizer_css ){
@@ -147,6 +216,13 @@ class ThemeCustomizer {
     	} else {
     		return '';
     	}
+    }
+
+    public function add_missing_hash( $color ){
+        if( $color && strpos( $color, '#') === false ) {
+            $color = '#' . $color;
+        }
+        return $color;
     }
 }
 

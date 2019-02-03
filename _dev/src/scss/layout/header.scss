@@ -17,6 +17,18 @@
         display: block;
     }
 
+    a {
+        font-family: 'Oswald', sans-serif;
+        text-transform: uppercase;
+
+        &:hover {
+            color: $yellow-orange;
+        }
+
+        &.call-now-button:hover {
+            color: $ruby;
+        }
+    }
 }
 
 .site-title {
@@ -115,7 +127,6 @@
     left: -100%;
     width: 100%;
     min-height: 100vh;
-    background: $ocean-boat-blue;
     border-bottom: none;
 
     &:not(.hidden-menu) {

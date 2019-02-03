@@ -60,11 +60,18 @@
 
 #copyright {
     display: flex;
-    justify-content: space-between;
     margin-left: auto;
+
+    @include bp(min-md){
+        justify-content: space-between;
+    }
 
     span {
         display: inline-block;
-        margin-left: 4px;
+        margin-left:16px;
+
+        @include bp(min-md){
+            margin-left: 4px;
+        }
     }
 }
