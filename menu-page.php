@@ -94,7 +94,7 @@
                             <span class="price">$16.00</span>
                         </header>
                         <div class="description">
-                            <img src="/wp-content/uploads/2019/02/andy-wang-658871-unsplash-1.jpg">
+                            <img src="/wp-content/uploads/2019/02/andy-wang-658871-unsplash.jpg">
                             <p>Honey cured bacon, fried egg, sausage, baked beans, toast, grilled tomatoes and mushrooms.</p>
                         </div>
                     </figure>
