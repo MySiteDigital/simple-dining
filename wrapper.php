@@ -1,9 +1,20 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
     <head>
-        <title><?php wp_title( '|', true, 'right' ); ?></title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <?php
+            $title = wp_title( '|' , false, 'right' ) . get_bloginfo( 'name' );
+            if( is_front_page() ){
+                if( is_home() ){
+                    $title .= ' - Latest Posts';
+                }
+                else {
+                    $title .= ' - ' . get_bloginfo( 'description' );
+                }
+            }
+            echo '<title>' . $title . '</title>';
+        ?>
+        <meta charset="<?php bloginfo( 'charset' ); ?>" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <!-- wordpress head functions -->
         <link href="https://fonts.googleapis.com/css?family=Oswald:500,600" rel="stylesheet">
