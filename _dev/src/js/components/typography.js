@@ -4,7 +4,7 @@ var typography = {
 
     windowWidth: window.outerWidth,
 
-    fullAlignedImage: jQuery('.wp-block-image.alignfull'),
+    fullAlignedImage: jQuery('.wp-block-image.alignfull, .wp-block-gallery.alignfull'),
 
     init: function() {
         let scrollBarWidth = this.windowWidth - this.bodyWidth;

@@ -37,6 +37,10 @@ p.has-drop-cap:not(:focus)::first-letter {
     .alignright {
         margin: 4px 0 24px 24px;
     }
+}
+
+.wp-block-image,
+.wp-block-gallery {
 
     &.alignfull {
         margin: 24px -16px;

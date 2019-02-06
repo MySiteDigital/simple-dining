@@ -29,10 +29,31 @@ var menuMasonry = {
             jQuery('.' + menuMasonry.menuSectionClass).each(
                 function(i, el){
                     let previousItem = {};
+                    //right column
                     let currentItem = {};
                     jQuery(el).find('.' + menuMasonry.menuItemsClass).each(
                         function(i, el){
-                            if(i % 2){
+                            if(i % 2 == true){
+                                if(! jQuery.isEmptyObject(previousItem)){
+                                    currentItem = jQuery(el);
+                                    let prevBottom = previousItem.offset().top + previousItem.outerHeight();
+                                    let currentTop = currentItem.offset().top;
+                                    let distance = currentTop - prevBottom - columnMargin;
+                                    currentItem.css('marginTop', -distance);
+                                    previousItem = currentItem;
+                                }
+                                else {
+                                    previousItem = jQuery(el);
+                                }
+                            }
+                        }
+                    );
+                    //left column
+                    previousItem = {};
+                    currentItem = {};
+                    jQuery(el).find('.' + menuMasonry.menuItemsClass).each(
+                        function(i, el){
+                            if((i % 2) == false){
                                 if(! jQuery.isEmptyObject(previousItem)){
                                     currentItem = jQuery(el);
                                     let prevBottom = previousItem.offset().top + previousItem.outerHeight();
