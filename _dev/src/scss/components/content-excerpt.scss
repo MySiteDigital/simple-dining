@@ -1,17 +1,28 @@
 .entry-footer {
-
-    display: flex;
+    display: block;
     align-items: center;
     margin-bottom: 60px;
     padding: 8px;
     border-top: 1px solid $my-grey;
     border-bottom: 1px solid $my-grey;
 
+    @include bp (min-sm) {
+        display: flex;
+    }
 
     span {
         display: flex;
         align-items: center;
         padding-right: 8px;
+
+        &.byline,
+        &.posted-on {
+            margin-bottom: 8px;
+
+            @include bp (min-sm) {
+                margin: 0;
+            }
+        }
     }
 
     svg {

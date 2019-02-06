@@ -7,8 +7,8 @@
 
                  get_template_part( 'template-parts/content/content', 'excerpt' );
             }
-            //// Previous/next page navigation. - I guess this will probably be needed too
-            //twentynineteen_the_posts_navigation();
+
+            get_template_part( 'template-parts/navigation/pagination' );
         }
         else {
 			// If no content, include the "No posts found" template.

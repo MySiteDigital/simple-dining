@@ -15,7 +15,8 @@ main:not(.home) {
 
 
 article,
-.error-404 {
+.error-404,
+.pagination {
     max-width: 600px;
     margin: 0 auto;
 }

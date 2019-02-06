@@ -46,7 +46,7 @@ class ThemeMenus {
          return preg_replace(
                     '/[^<>]+(?=<[^<>]+>)|[^<>]+$/',
                     '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
-                        <use xlink:href="'. icons( false ) .'#phone-icon"/>
+                        <use xlink:href="'. icons( false ) .'#phone"/>
                     </svg>$0</a>',
                     $anchor
                 );
