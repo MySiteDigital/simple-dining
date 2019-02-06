@@ -1,0 +1,51 @@
+.pagination {
+
+    svg {
+        display: inline-block;
+        fill: $sea-serpent;
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+    }
+
+    .page-numbers {
+        padding: 0 4px;
+        font-weight: bold;
+
+        @include bp(min-sm) {
+            padding: 0 8px;
+        }
+    }
+
+    .prev,
+    .next {
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            svg {
+                fill: $ocean-boat-blue;
+            }
+        }
+    }
+
+    .prev {
+        margin-right: auto;
+    }
+
+    .next {
+        margin-left: auto;
+    }
+
+    .nav-prev-text,
+    .nav-next-text {
+        display: none;
+
+        @include bp(min-sm) {
+            display: inline;
+        }
+    }
+
+}
