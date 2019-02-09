@@ -1,46 +1,68 @@
 .wp-block-dining-dashboard-menu-item {
     margin: 0;
-    padding: 12px;
-    border: 2px solid $sea-serpent;
+    border: 4px solid $sea-serpent;
+    border-radius: 8px;
 
-    header {
-        margin-bottom: 12px;
+    @include bp(min-sm){
         display: flex;
-        align-items: flex-start;
-        h3 {
-            margin: 0 12px 0 0;
-            line-height: 1;
-        }
     }
 
-    img {
-        max-width: 150px;
-        max-height: 150px;
-        margin: 0 0 12px 0;
+    .img {
+        height: 150px;
+        border-radius: 4px 4px 0 0;
+        background-size: cover;
+        background-position: center center;
 
         @include bp(min-sm){
-            max-height: none;
-            margin: 4px 12px 0 0;
+            width: 200px;
+            height: auto;
+            border-radius: 4px 0 0 4px;
         }
 
         @include bp(min-md){
-            max-width: 200px;
-        }
-    }
-
-    .description {
-        @include bp(min-sm){
-            display: flex;
-            align-items: flex-start;
-        }
-
-        @include bp(min-md){
-            display: block;
+            width: 150px;
         }
 
         @include bp(min-lg){
-            display: flex;
+            width: 200px;
         }
+    }
+
+    .details {
+        margin: 12px;
+
+        @include bp(min-sm){
+            width: calc(100% - 200px);
+        }
+
+        @include bp(min-md){
+            width: calc(100% - 150px);
+        }
+
+        @include bp(min-lg){
+            width: calc(100% - 200px);
+        }
+
+        h3 {
+            margin: 0 0 12px 0;
+            line-height: 1;
+        }
+
+        p {
+            margin: 0 0 12px 0;
+        }
+    }
+
+    .meta {
+        display: flex;
+        align-items: center;
+        margin-left: -3px;
+    }
+
+    svg {
+        display: block;
+        width: 32px;
+        height: 32px;
     }
 
     .price {

@@ -1,6 +1,7 @@
 import '../scss/build.scss';
 
 import menuMasonry from './components/menu-masonry';
+import menuNav from './components/menu-navigation';
 import mobileNav from './components/mobile-nav';
 import typography from './components/typography';
 
@@ -11,6 +12,7 @@ import typography from './components/typography';
         jQuery(document).ready(
             function() {
                 typography.init();
+                menuNav.init();
             }
         );
 

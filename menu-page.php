@@ -37,64 +37,112 @@
                         'Fresh Bircher Muesli' =>[
                             'price' => '$10.00',
                             'img' => 'dose-juice-1184446-unsplash.jpg',
-                            'desc' => 'Soaked overnight in Apple juice and manuka honey, served with fresh kiwifruit and strawberries.'
+                            'desc' => 'Soaked overnight in Apple juice and manuka honey, served with fresh kiwifruit and strawberries.',
+                            'diet' => [
+                                'vegetarian',
+                                'vegan'
+                            ]
                         ],
                         'Avocado on Toast' => [
                             'price' => '$12.00',
                             'img' => 'wesual-click-1136560-unsplash.jpg',
-                            'desc' => 'Sliced avocado on whole grain toast with a soft boiled egg on the side.'
+                            'desc' => 'Sliced avocado on whole grain toast with a soft boiled egg on the side.',
+                            'diet' => [
+                                'vegetarian',
+                                'gluten-free'
+                            ]
                         ],
                         'Breakfast Waffles' => [
                             'price' => '$12.00',
                             'img' =>'taylor-kiser-373466-unsplash.jpg',
-                            'desc' => 'Fresh waffles with spiced caramel cream, pistachios and walnuts.'
+                            'desc' => 'Fresh waffles with spiced caramel cream, pistachios and walnuts.',
+                            'diet' => [
+                                'vegetarian',
+                                'vegan'
+                            ]
                         ],
                         'French Toast' => [
                             'price' => '$14.00',
                             'img' => 'toa-heftiba-243303-unsplash.jpg',
-                            'desc' => 'Delicious French toast with strawberries, blueberries and a splash of cream.'
+                            'desc' => 'Delicious French toast with strawberries, blueberries and a splash of cream.',
+                            'diet' => [
+                                'vegetarian',
+                                'vegan',
+                                'gluten-free'
+                            ]
                         ],
                         'Kiwi Breakfast' => [
                             'price' => '$16.00',
                             'img' =>'andy-wang-658871-unsplash.jpg',
-                            'desc' => 'Honey cured bacon, fried egg, sausage, baked beans, toast, grilled tomatoes and mushrooms.'
+                            'desc' => 'Honey cured bacon, fried egg, sausage, baked beans, toast, grilled tomatoes and mushrooms.',
+                            'diet' => [
+                                'gluten-free'
+                            ]
                         ],
                         'Fruit Platter' => [
                             'price' => '$16.00',
                             'img' =>'heather-ford-731018-unsplash.jpg',
-                            'desc' => 'Seasonal fruit served with cinnamon toast, crackers and creamy Greek yogurt.'
+                            'desc' => 'Seasonal fruit served with cinnamon toast, crackers and creamy Greek yogurt.',
+                            'diet' => [
+                                'vegetarian',
+                                'vegan',
+                                'gluten-free'
+                            ]
                         ]
                     ],
                     'Lunch' => [
                         'Honey Soy Chicken Nibbles' =>[
                             'price' => '$10.00',
                             'img' => 'atharva-tulsi-682134-unsplash.jpg',
-                            'desc' => 'Honey soy chicken nibbles with red onion salad and ranch dressing dipping sauce.'
+                            'desc' => 'Honey soy chicken nibbles with red onion salad and ranch dressing dipping sauce.',
+                            'diet' => [
+                                'gluten-free'
+                            ]
                         ],
                         'Basil Pesto Salad' => [
                             'price' => '$12.00',
                             'img' => 'eaters-collective-132773-unsplash.jpg',
-                            'desc' => 'Fresh basil pesto pasta salad, with cherry tomatoes on a bed of lettuce.'
+                            'desc' => 'Fresh basil pesto pasta salad, with cherry tomatoes on a bed of lettuce.',
+                            'diet' => [
+                                'vegetarian',
+                                'vegan'
+                            ]
                         ],
                         'Ham and Cheese Sandwich' =>[
                             'price' => '$14.00',
                             'img' => 'ola-mishchenko-600012-unsplash.jpg',
-                            'desc' => 'Ham and cheese in toasted ciabata, accompanied with lettuce and capsicum.'
+                            'desc' => 'Ham and cheese in toasted ciabata, accompanied with lettuce and capsicum.',
+                            'diet' => [
+                                'vegetarian',
+                                'vegan'
+                            ]
                         ],
                         'Lamb Salad' => [
                             'price' => '$14.00',
                             'img' =>'katherine-chase-493940-unsplash.jpg',
-                            'desc' => 'Caramelised lamb chops and onions, served on a bed of mesclun and raspberries.'
+                            'desc' => 'Caramelised lamb chops and onions, served on a bed of mesclun and raspberries.',
+                            'diet' => [
+                                'gluten-free'
+                            ]
                         ],
                         'Eggs Montreal' => [
                             'price' => '$14.00',
                             'img' => 'john-baker-349285-unsplash.jpg',
-                            'desc' => 'Poached eggs and smoked salmon served on English muffins and topped with hollandaise sauce.'
+                            'desc' => 'Poached eggs and smoked salmon served on English muffins and topped with hollandaise sauce.',
+                            'diet' => [
+                                'vegetarian',
+                                'gluten-free'
+                            ]
                         ],
                         'Stuffed Aubergine' =>[
                             'price' => '$14.00',
                             'img' => 'mariana-medvedeva-561531-unsplash.jpg',
-                            'desc' => 'Stuffed Aubergine topped with dairy free yogurt and coriander, served with a side of tomato and red onion salad.'
+                            'desc' => 'Stuffed Aubergine topped with dairy free yogurt and coriander, served with a side of tomato and red onion salad.',
+                            'diet' => [
+                                'vegetarian',
+                                'vegan',
+                                'gluten-free'
+                            ]
                         ],
                         'Cheese Burger' =>[
                             'price' => '$16.00',
@@ -106,17 +154,29 @@
                         'Three Bean Vege Open Sandwich' =>[
                             'price' => '$14.00',
                             'img' => 'ruth-reyer-1140155-unsplash.jpg',
-                            'desc' => 'Homemade vegetable patties with sliced avocado served on wholemeal bread with a side of two colour zucchini salad.'
+                            'desc' => 'Homemade vegetable patties with sliced avocado served on wholemeal bread with a side of two colour zucchini salad.',
+                            'diet' => [
+                                'vegetarian',
+                                'vegan',
+                                'gluten-free'
+                            ]
                         ],
                         'Mediterranean Salad' => [
                             'price' => '$14.00',
                             'img' => 'luiz-hansel-1159999-unsplash.jpg',
-                            'desc' => 'Corn fritters and a selection of vegetables tossed in a Mediterranean dressing with a drizzling of Greek yogurt.'
+                            'desc' => 'Corn fritters and a selection of vegetables tossed in a Mediterranean dressing with a drizzling of Greek yogurt.',
+                            'diet' => [
+                                'vegetarian',
+                                'vegan'
+                            ]
                         ],
                         'Macaroni Cheese' => [
                             'price' => '$16.00',
                             'img' => 'ronaldo-de-oliveira-974000-unsplash.jpg',
-                            'desc' => 'Creamy macaroni cheese with grilled tomatoes and topped with walnuts and microgreens.'
+                            'desc' => 'Creamy macaroni cheese with grilled tomatoes and topped with walnuts and microgreens.',
+                            'diet' => [
+                                'vegetarian'
+                            ]
                         ],
                         'Barbeque Meatballs' => [
                             'price' => '$16.00',
@@ -126,17 +186,27 @@
                         'Grilled Lemon Chicken' => [
                             'price' => '$18.00',
                             'img' =>'mark-deyoung-753346-unsplash.jpg',
-                            'desc' => 'Chicken marinated in lemon sauce and then chargrilled with aubergine and served with steamed vegetables.'
+                            'desc' => 'Chicken marinated in lemon sauce and then chargrilled with aubergine and served with steamed vegetables.',
+                            'diet' => [
+                                'gluten-free'
+                            ]
                         ],
                         'Summer Rolls' => [
                             'price' => '$18.00',
                             'img' => 'ella-olsson-1128013-unsplash.jpg',
-                            'desc' => 'Vietnamese style vegetable rolls, served with sesame dressing and garnished with mint leaves.'
+                            'desc' => 'Vietnamese style vegetable rolls, served with sesame dressing and garnished with mint leaves.',
+                            'diet' => [
+                                'vegetarian',
+                                'vegan'
+                            ]
                         ],
                         'Porterhouse Steak' => [
                             'price' => '$20.00',
                             'img' => 'krystel-encinares-1278051-unsplash.jpg',
-                            'desc' => 'Premium chargrilled steak, served with grilled mushrooms, tomatoes, Brussels sprouts and pearl onions .'
+                            'desc' => 'Premium chargrilled steak, served with grilled mushrooms, tomatoes, Brussels sprouts and pearl onions .',
+                            'diet' => [
+                                'gluten-free'
+                            ]
                         ],
                         'Antipasto Platter' => [
                             'price' => '$30.00',
@@ -148,22 +218,45 @@
                         'Blueberry Cheesecake' =>[
                             'price' => '$10.00',
                             'img' => 'mink-mingle-762115-unsplash.jpg',
-                            'desc' => 'Homemade cheesecake, topped with blueberry compote.'
+                            'desc' => 'Homemade cheesecake, topped with blueberry compote.',
+                            'diet' => [
+                                'vegetarian'
+                            ]
                         ],
                         'Tiramisu' => [
                             'price' => '$12.00',
                             'img' =>'cesar-vladimir-hernandez-sandoval-1153332-unsplash.jpg',
-                            'desc' => 'Rich layered Italian desert, with berries and a side of chocolate gelato.'
+                            'desc' => 'Rich layered Italian desert, with berries and a side of chocolate gelato.',
+                            'diet' => [
+                                'vegetarian'
+                            ]
                         ],
                         'Raspberry Pannacotta' => [
                             'price' => '$14.00',
                             'img' => 'mantra-media-58091-unsplash.jpg',
-                            'desc' => 'Delicious raspberry pannacotta, served with a ring of fresh raspberries and garnished with crumbled cookies and mint.'
+                            'desc' => 'Delicious raspberry pannacotta, served with a ring of fresh raspberries and garnished with crumbled cookies and mint.',
+                            'diet' => [
+                                'vegetarian',
+                                'gluten-free'
+                            ]
                         ],
                         'Pavlova' => [
                             'price' => '$16.00',
                             'img' => 'artur-rutkowski-581979-unsplash.jpg',
-                            'desc' => 'Our signature desert dish! Beautiful pavlova with fresh raspberries, pomegranate seed and mint leaves.'
+                            'desc' => 'Our signature desert dish! Beautiful pavlova with fresh raspberries, pomegranate seed and mint leaves.',
+                            'diet' => [
+                                'vegetarian'
+                            ]
+                        ],
+                        'Fruit Platter' => [
+                            'price' => '$16.00',
+                            'img' =>'heather-ford-731018-unsplash.jpg',
+                            'desc' => 'Seasonal fruit served with cinnamon toast, crackers and creamy Greek yogurt.',
+                            'diet' => [
+                                'vegetarian',
+                                'vegan',
+                                'gluten-free'
+                            ]
                         ]
                     ]
                 ];
