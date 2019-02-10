@@ -1,13 +1,15 @@
 #page-not-found-nav {
     @extend #mobile-nav;
 
+    margin: 0;
+
     ul {
-        border-color: $sea-serpent;
+        border-color: $picton-blue;
 
         li {
             margin: 0;
             padding: 16px 8px;
-            border-color: $sea-serpent;
+            border-color: $picton-blue;
         }
     }
 

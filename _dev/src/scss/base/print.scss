@@ -1,0 +1,9 @@
+@media print {
+   #header,
+   #footer,
+   button svg,
+   .button,
+   #cloned-cta, #cloned-nav {
+       display: none!important;
+   }
+}

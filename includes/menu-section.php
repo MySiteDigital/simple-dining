@@ -11,13 +11,13 @@
         $count = 0;
         foreach( $section_items as $item_title => $item_values  ){
             if( $count % 2 == 0 && $count > 0 ){
+                $extra_class = ' item-' . ($count % 4 + 1);
                 echo '</div>';
-                echo '<div class="wp-block-columns has-2-columns">';
+                echo '<div class="wp-block-columns has-2-columns' . $extra_class . '">';
             }
-            $extra_class = ' item-' . ($count % 4 + 1);
             ?>
             <div class="wp-block-column">
-                <figure class="wp-block-dining-dashboard-menu-item<?php echo $extra_class; ?>">
+                <figure class="wp-block-dining-dashboard-menu-item">
                     <div class="img" style="background-image: url(/wp-content/uploads/2019/02/<?php echo $item_values['img']; ?>);">
                         &nbsp;
                     </div>

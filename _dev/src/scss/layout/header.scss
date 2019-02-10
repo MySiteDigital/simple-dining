@@ -1,16 +1,15 @@
 #header, #hidden-menu {
     display: flex;
     align-items: center;
-    padding: 10px 10px 5px;
+    padding: 10px;
     background: $ocean-boat-blue;
-    border-bottom: 5px solid $sea-serpent;
 
     @include bp(min-md){
-        padding: 20px 20px 15px;
+        padding: 20px;
     }
 
     @include bp(min-lg){
-        padding: 25px 25px 20px;
+        padding: 25px;
     }
 
     img {
@@ -18,25 +17,23 @@
     }
 
     a {
+        color: $my-white;
         font-family: 'Oswald', sans-serif;
         text-transform: uppercase;
 
         &:hover {
-            color: $yellow-orange;
+            color: $java;
         }
 
-        &.call-now-button:hover {
-            color: $ruby;
-        }
     }
 }
 
 .site-title {
-    border-bottom: 3px solid transparent;
+    border-bottom: 2px solid transparent;
     font-size: 2.4rem;
 
     &:hover {
-        border-bottom: 3px solid $yellow-orange;
+        border-bottom: 2px solid $java;
     }
 
     &.custom-logo-link {
@@ -59,7 +56,7 @@
 #main-nav,
 #cloned-nav {
     visibility: hidden;
-    margin-top: -2.5px;
+    margin-top: -2px;
     margin-left: auto;
 
     ul {
@@ -74,7 +71,7 @@
             padding-left: 40px;
 
             &.current_page_item a {
-                border-bottom: 3px solid $yellow-green;
+                border-bottom: 2px solid $java;
             }
         }
     }
@@ -92,7 +89,7 @@
             list-style: none;
 
             &.current_page_item a {
-                color: $yellow-green;
+                color: $java;
             }
         }
     }
@@ -117,12 +114,12 @@
 
     svg {
         display: block;
-        width: 36px;
-        fill: $yellow-green;
+        width: 24px;
+        fill: white;
     }
 
     &:hover svg {
-        fill: $ruby;
+        fill: $java;
     }
 }
 

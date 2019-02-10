@@ -53,13 +53,16 @@ p {
 }
 
 a {
-    color: $sea-serpent;
+    color: #0074D9;
+    color: $ocean-boat-blue;
     text-decoration: none;
 
     &:hover {
-        color: $ocean-boat-blue;
+        color: #00BFFF;
+        color: $picton-blue;
     }
 }
+
 
 button {
     color: $my-black;

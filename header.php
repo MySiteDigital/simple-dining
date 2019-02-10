@@ -1,6 +1,6 @@
 <header id="header">
     <?php
-        if( the_custom_logo() ) {
+        if( get_custom_logo() ) {
             the_custom_logo();
         }
         else {
@@ -17,7 +17,7 @@
 
 <header id="hidden-menu">
     <?php
-        if( the_custom_logo() ) {
+        if( get_custom_logo() ) {
             the_custom_logo();
         }
         else {

@@ -1,6 +1,6 @@
 .wp-block-dining-dashboard-menu-item {
     margin: 0;
-    border: 4px solid $sea-serpent;
+    border: 4px solid $picton-blue;
     border-radius: 8px;
 
     @include bp(min-sm){
@@ -29,7 +29,7 @@
     }
 
     .details {
-        margin: 12px;
+        margin: 16px;
 
         @include bp(min-sm){
             width: calc(100% - 200px);

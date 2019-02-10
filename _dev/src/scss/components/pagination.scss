@@ -1,8 +1,11 @@
 .pagination {
 
+    padding-top: 16px;
+    border-top: 4px solid $java;
+
     svg {
         display: inline-block;
-        fill: $sea-serpent;
+        fill: $ocean-boat-blue;
     }
 
     .nav-links {
@@ -26,7 +29,7 @@
 
         &:hover {
             svg {
-                fill: $ocean-boat-blue;
+                fill: $picton-blue;
             }
         }
     }
