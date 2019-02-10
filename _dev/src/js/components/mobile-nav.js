@@ -53,6 +53,7 @@ var mobileNav = {
             mobileNav.hiddenMenu.removeClass('hidden-menu');
             mobileNav.callNowButton.addClass('full-size');
             mobileNav.mainNav.show();
+            mobileNav.mainNav.css('visibility', 'visible');
             mobileNav.mobileIcons.hide();
             mobileNav.openButton.css('display', 'none');
         }

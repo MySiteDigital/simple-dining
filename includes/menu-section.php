@@ -4,7 +4,7 @@
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
             <use xlink:href="<?php icons(); ?>#down"/>
         </svg>
-    </button> 
+    </button>
 </div>
 <div class="wp-block-columns has-2-columns">
     <?php
@@ -14,9 +14,10 @@
                 echo '</div>';
                 echo '<div class="wp-block-columns has-2-columns">';
             }
+            $extra_class = ' item-' . ($count % 4 + 1);
             ?>
             <div class="wp-block-column">
-                <figure class="wp-block-dining-dashboard-menu-item">
+                <figure class="wp-block-dining-dashboard-menu-item<?php echo $extra_class; ?>">
                     <div class="img" style="background-image: url(/wp-content/uploads/2019/02/<?php echo $item_values['img']; ?>);">
                         &nbsp;
                     </div>

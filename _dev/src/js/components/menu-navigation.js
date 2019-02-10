@@ -1,3 +1,5 @@
+import menuMasonry from './menu-masonry';
+
 var menuNav = {
 
     menuContainer: jQuery('.menu-container'),
@@ -9,13 +11,13 @@ var menuNav = {
     },
 
     buttonListener: function() {
-        console.log('sdfdsf');
         menuNav.menuContainer.on(
             'click',
             '.menu-section-heading button',
             function(){
                 jQuery(this).toggleClass('open');
                 jQuery(this).parent().next('.menu-section').slideToggle();
+                menuMasonry.activateMasonry();
             }
         );
     }

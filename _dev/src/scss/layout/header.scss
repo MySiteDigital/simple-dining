@@ -52,8 +52,13 @@
     }
 }
 
+.mobile-icons {
+    display: none;
+}
+
 #main-nav,
 #cloned-nav {
+    visibility: hidden;
     margin-top: -2.5px;
     margin-left: auto;
 

@@ -24,11 +24,41 @@
 
         <div class="entry-content">
 
-            <div class="wp-block-columns has-2-columns">
+            <div class="wp-block-columns has-2-columns intro">
                 <div class="wp-block-column">
-                    <p>Cake tootsie roll carrot cake sugar plum. Dragée sesame snaps caramels  chocolate bar cotton candy oat cake. Carrot cake cupcake marzipan jelly  beans dessert macaroon muffin. Topping chocolate cake gummi bears  marzipan tootsie roll marzipan candy. Gingerbread candy canes apple pie  jujubes soufflé chocolate bar topping apple pie dragée. Jelly beans  macaroon biscuit. </p>
+                    <p>
+                        Breakfast is available everyday from 7:00AM until 11:00AM and lunch from 11:00AM until 2:00PM.<br><br>
+                        Dinner is available Wednesday to Saturday from 6:00PM til late, see our <a href="/location/#opening-hours">opening hours</a> for  more details.
+                    </p>
                 </div>
-                <div class="wp-block-column">
+                <div class="wp-block-column" id="dietary-requirements-legend">
+                    <strong>Dietary Requirements</strong>
+                    <dl>
+                        <dt>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+                                <use xlink:href="<?php icons(); ?>#vegetarian"/>
+                            </svg>
+                        </dt>
+                        <dd>
+                            <span>Vegetarian or vegetarian options available.</span>
+                        </dd>
+                        <dt>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+                                <use xlink:href="<?php icons(); ?>#vegan"/>
+                            </svg>
+                        </dt>
+                        <dd>
+                            <span>Vegan or vegan options available.</span>
+                        </dd>
+                        <dt>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+                                <use xlink:href="<?php icons(); ?>#gluten-free"/>
+                            </svg>
+                        </dt>
+                        <dd>
+                            <span>Gluten free or gluten free options available.</span>
+                        </dd>
+                    </dl>
                 </div>
             </div>
             <?php
