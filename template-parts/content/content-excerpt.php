@@ -53,16 +53,22 @@
 
         </span>
 
-        <span class="edit-link">
+        <?php
+            if( current_user_can( 'edit_posts' ) ) {
+                ?>
+                <span class="edit-link">
 
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
-                <use xlink:href="<?php icons(); ?>#edit"/>
-            </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+                        <use xlink:href="<?php icons(); ?>#edit"/>
+                    </svg>
 
-            <a href="<?php echo get_edit_post_link( get_the_ID() ); ?>" target="_blank">
-                <?php the_title(); ?>
-            </a>
-        </span>
+                    <a href="<?php echo get_edit_post_link( get_the_ID() ); ?>" target="_blank">
+                        <?php the_title(); ?>
+                    </a>
+                </span>
+                <?php
+            }
+        ?>
 
 	</footer><!-- .entry-footer -->
 

@@ -8,7 +8,7 @@ https://css-tricks.com/svg-use-external-source/
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
     <symbol id="open-menu">
-        <path d="M0 24H24V20H0V24ZM0 14H24V10H0V14ZM0 0V4H24V0H0Z"/>
+        <path d="M0 24H36V20H0V24ZM0 14H36V10H0V14ZM0 0V4H36V0H0Z"/>
     </symbol>
 
     <symbol id="close-menu">
