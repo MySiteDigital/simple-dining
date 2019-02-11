@@ -4,7 +4,9 @@
     margin-bottom: 60px;
     padding: 8px;
     border-top: 1px solid $my-grey;
+    border-top: 1px solid var(--grey);
     border-bottom: 1px solid $my-grey;
+    border-bottom: 1px solid var(--grey);
 
     @include bp (min-sm) {
         display: flex;

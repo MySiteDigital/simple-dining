@@ -1,6 +1,7 @@
 #footer {
     padding: 16px;
     background: $ocean-boat-blue;
+    background: var(--main-color);
 
     @include bp(min-md){
         display: flex;
@@ -13,17 +14,20 @@
     }
 
     a {
-        color: white;
+        color: $my-white;
+        color: var(--white);
         font-family: 'Oswald', sans-serif;
         text-transform: uppercase;
 
         &:hover {
             color: $java;
+            color: var(--highlight-color-1);
         }
     }
 
     svg {
         fill: $java;
+        fill: var(--highlight-color-1);
     }
 }
 

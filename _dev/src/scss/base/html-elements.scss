@@ -8,7 +8,9 @@ html {
 
 body {
     background-color: $my-white;
+    background-color: var(--white);
     color: $my-black;
+    color: var(--black);
     font-family: 'Open Sans', sans-serif;
     font-size: 2rem;
 }
@@ -53,19 +55,20 @@ p {
 }
 
 a {
-    color: #0074D9;
     color: $ocean-boat-blue;
+    color: var(--main-color);
     text-decoration: none;
 
     &:hover {
-        color: #00BFFF;
         color: $picton-blue;
+        color: var(--highlight-color-2);
     }
 }
 
 
 button {
     color: $my-black;
+    color: var(--black);
 }
 
 ul, ol {
@@ -110,6 +113,7 @@ blockquote {
     margin: 0 0 16px;
     padding: 12px 24px;
     border-left : 4px solid $ocean-boat-blue;
+    border-left : 4px solid var(--main-color);
 
     p {
         margin: 0;
@@ -120,6 +124,13 @@ svg {
     width: 24px;
     height: 24px;
     fill: $ocean-boat-blue;
+    fill: var(--main-color);
+}
+
+td, th {
+    padding: 8px;
+    border: 2px solid $my-black;
+    border: 2px solid var(--black);
 }
 
 iframe body {

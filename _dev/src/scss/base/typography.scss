@@ -85,7 +85,9 @@ p.has-drop-cap:not(:focus)::first-letter {
         margin-left: 4px;
         padding: 24px;
         background-color: $my-grey;
+        background-color: var(--grey);
         border-left: 4px solid $picton-blue;
+        border-left: 4px solid var(--highlight-color-2);
         font-size: 2.8rem;
 
         &:before {
@@ -95,6 +97,7 @@ p.has-drop-cap:not(:focus)::first-letter {
             bottom: 0;
             content: '';
             border-left: 4px solid $ocean-boat-blue;
+            border-left: 4px solid var(--main-color);
         }
     }
 
@@ -107,11 +110,6 @@ p.has-drop-cap:not(:focus)::first-letter {
     width: 100%;
     margin-bottom: 20px;
     border-collapse: collapse;
-
-    td, th {
-        padding: 8px;
-        border: 2px solid $my-black;
-    }
 }
 
 .wp-block-embed-youtube,
@@ -146,6 +144,7 @@ p.has-drop-cap:not(:focus)::first-letter {
 .wp-block-separator {
     margin: 0 auto 20px;
     border-color: $my-grey;
+    border-color: var(--grey);
 }
 
 .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {

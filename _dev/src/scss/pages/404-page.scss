@@ -5,11 +5,13 @@
 
     ul {
         border-color: $picton-blue;
+        border-color: var(--highlight-color-2);
 
         li {
             margin: 0;
             padding: 16px 8px;
             border-color: $picton-blue;
+            border-color: var(--highlight-color-2);
         }
     }
 

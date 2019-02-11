@@ -13,82 +13,54 @@ class ThemeCustomizer {
     //https://inkbotdesign.com/google-font-combinations-mixing-typefaces/
     private $font_choices = [
 		'' => '',
-		'Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i' => 'Roboto',
-        'Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i' => 'Open Sans',
-        'Lato:100,100i,300,300i,400,400i,700,700i,900,900i' => 'Lato',
-        'Slabo+27px' => 'Slabo+27px',
-        'Oswald:200,300,400,500,600,700' => 'Oswald',
-        'Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i' => 'Source Sans Pro',
-        'Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i' => 'Montserrat',
-        'Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i' => 'Raleway',
-        'PT+Sans:400,400i,700,700i' => 'PT Sans',
-        'Lora:400,400i,700,700i' => 'Lora'
+		'Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i' => "'Roboto'",
+        'Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i' => "'Open Sans'",
+        'Lato:100,100i,300,300i,400,400i,700,700i,900,900i' => "'Lato'",
+        'Slabo+27px' => "'Slabo 27px'",
+        'Oswald:200,300,400,500,600,700' => "'Oswald'",
+        'Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i' => "'Source Sans Pro'",
+        'Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i' => "'Montserrat'",
+        'Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i' => "'Raleway'",
+        'PT+Sans:400,400i,700,700i' => "'PT Sans'",
+        'Lora:400,400i,700,700i' => "'Lora'"
 	];
 
     private $color_options = [
         'background_color' => [
             'default'       => '#fefefe',
             'description'   =>  'Main Background Colour',
-            'css_properties'    => [
-                'body{background-color: '
+            'css_var'    => [
+                '--white'
             ]
         ],
         'text_color' => [
             'default'     => '#333333',
             'description' => 'Main Text Colour',
-            'css_properties'  => [
-                'body{color: '
+            'css_var'    => [
+                '--black'
             ]
         ],
-        'header_footer_background_color' => [
+        'main_theme_color' => [
             'default'     => '#2569e6',
-            'description' => 'Header/Footer Background Colour',
-            'css_properties'  => [
-                '#header, #footer, #hidden-menu{background-color: ',
-                'input[type=submit], input:focus, textarea:focus, .button{border-color: ',
-                'blockquote{border-color: ',
-                'svg{fill: ',
-                'blockquote, .wp-block-quote:not(.is-large):not(.is-style-large), .wp-block-quote.is-large:before{border-color: ',
-                '.button, input[type=submit] {color: '
+            'description' => 'Main Theme Colour',
+            'css_var'    => [
+                '--main-color'
             ]
         ],
-        'header_footer_link_color' => [
-            'default'     => '#49c6e5',
-            'description' => 'Header/Footer Link Colour',
-            'css_properties'  => [
-                '#header a,#mobile-nav a,#footer a,.site-title {color: ',
-                '#header,#footer, #page-not-found-nav ul, #page-not-found-nav ul li {border-color: ',
-                'input, textarea {border-color: ',
-                '.wp-block-quote.is-large{border-color: ',
-                '.wp-block-dining-dashboard-menu-item{border-color: '
+        'hightlight_color_1' => [
+            'default'     => '#25e6a2',
+            'description' => 'Highlight Colour 1',
+            'css_var'    => [
+                '--highlight-color-1'
             ]
         ],
-        'header_footer_link_hover_color' => [
-            'default'     => '#ffbc42',
-            'description' => 'Header/Footer Link Hover Colour',
-            'css_properties'  => [
-                'input:hover, textarea:hover, #header a:hover, .site-title:hover {border-color: ',
-                '#header a:hover,#mobile-nav a:hover, #footer a:hover{color: '
+        'hightlight_color_2' => [
+            'default'     => '#25C9E6',
+            'description' => 'Highlight Colour 2',
+            'css_var'    => [
+                '--highlight-color-2'
             ]
         ],
-        'header_footer_current_page_link_color' => [
-            'default'     => '#8fc93a',
-            'description' => 'Header/Footer Current Page Link Colour',
-            'css_properties'  => [
-                '#main-nav ul li.current_page_item a, .call-now-button{border-color: ',
-                '#main-nav ul li.current_page_item a, #mobile-nav ul li.current_page_item a, #header .call-now-button{color: ',
-                '.call-now-button svg, #footer svg, #open-menu svg, #close-menu svg {fill: '
-            ]
-        ],
-        'button_hover_color' => [
-            'default'     => '#d81159',
-            'description' => 'Button Hover Colour',
-            'css_properties'  => [
-                '.button:hover {border-color: ',
-                '.button:hover, #header a.call-now-button:hover {color: ',
-                '.button:hover svg, #open-menu:hover, #close-menu:hover {fill: ',
-            ]
-        ]
     ];
 
     public function __construct() {
@@ -196,14 +168,20 @@ class ThemeCustomizer {
             $customizer_css .= 'h1, h2, h3, h4, h5, h6, input[type="submit"], #header a, #footer a, .button {font-family: ' . $this->font_choices[$heading_font] . ';}';
         }
 
+        $custom_colors = '';
+
         foreach( $this->color_options as $color_option => $color_option_settings ){
             $color = get_theme_mod( $color_option );
             $color = $this->add_missing_hash( $color );
             if( $color && $color != $color_option_settings['default'] ){
-                foreach( $color_option_settings['css_properties'] as $css_property ){
-                    $customizer_css .= $css_property . $color . ';}';
+                foreach( $color_option_settings['css_var'] as $css_var ){
+                    $custom_colors .= $css_var . ': ' . $color . ';';
                 }
             }
+        }
+
+        if( $custom_colors ){
+            $customizer_css .= ':root {' . $custom_colors . '}';
         }
 
         if( $customizer_css ){

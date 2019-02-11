@@ -63,7 +63,7 @@
                     </svg>
 
                     <a href="<?php echo get_edit_post_link( get_the_ID() ); ?>" target="_blank">
-                        <?php the_title(); ?>
+                        Edit Post
                     </a>
                 </span>
                 <?php

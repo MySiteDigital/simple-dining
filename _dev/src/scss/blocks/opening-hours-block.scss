@@ -2,13 +2,14 @@
 
     dl {
         border-bottom: 1px solid $my-grey;
+        border-bottom: 1px solid var(--grey);
     }
 
     dt {
         width: 60px;
         margin: 0;
         padding-top: 16px;
-        border-top: 1px solid $my-grey;
+        border-top: 1px solid var(--grey);
 
         @include bp(min-sm){
             width: 120px;

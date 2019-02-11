@@ -1,6 +1,7 @@
 .wp-block-dining-dashboard-menu-item {
     margin: 0;
     border: 4px solid $picton-blue;
+    border: 4px solid var(--highlight-color-2);
     border-radius: 8px;
 
     @include bp(min-sm){

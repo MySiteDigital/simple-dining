@@ -2,10 +2,12 @@
 
     padding-top: 16px;
     border-top: 4px solid $java;
+    border-top: 4px solid var(--highlight-color-1);
 
     svg {
         display: inline-block;
         fill: $ocean-boat-blue;
+        fill: var(--main-color);
     }
 
     .nav-links {
@@ -30,6 +32,7 @@
         &:hover {
             svg {
                 fill: $picton-blue;
+                fill: var(--highlight-color-2);
             }
         }
     }

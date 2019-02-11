@@ -1,7 +1,17 @@
 $ocean-boat-blue: #2569E6;
 $java: #25e6a2;
 $picton-blue: #25C9E6;
-
 $my-black: #333;
 $my-white: #fefefe;
 $my-grey: #eee;
+
+
+
+:root {
+  --main-color: #{$ocean-boat-blue};
+  --highlight-color-1: #{$java};
+  --highlight-color-2: #{$picton-blue};
+  --black: #{$my-black};
+  --white: #{$my-white};
+  --grey: #{$my-grey};
+}
