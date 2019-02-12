@@ -28,7 +28,8 @@
                 <div class="wp-block-column">
                     <p>
                         Breakfast is available everyday from 7:00AM until 11:00AM and lunch from 11:00AM until 2:00PM.<br><br>
-                        Dinner is available Wednesday to Saturday from 6:00PM til late, see our <a href="/location/#opening-hours">opening hours</a> for  more details.
+                        Dinner is available Wednesday to Saturday from 6:00PM til late, see our <a href="/location/#opening-hours">opening hours</a> for  more details.<br><br>
+                        You can also <a href="/wp-content/uploads/2019/02/Simple-Dining-Menu.pdf" target="_blank">view</a> our menu in PDF format.
                     </p>
                 </div>
                 <div class="wp-block-column" id="dietary-requirements-legend">
