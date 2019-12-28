@@ -1,4 +1,6 @@
-<header id="header">
+<?php use MySiteDigital\SimpleDining\Theme\Menus; ?>
+
+<header id="site-header">
     <?php
         if( get_custom_logo() ) {
             the_custom_logo();
@@ -7,11 +9,11 @@
             echo '<a href="/" class="site-title custom-logo-link">' . get_bloginfo( 'name' ) . '</a>';
         }
 
-        ThemeMenus::main_menu();
+        Menus::main_menu();
 
         get_template_part( 'template-parts/header/open-icon' );
 
-        ThemeMenus::call_now_button();
+        //Menus::call_now_button();
     ?>
 </header>
 
@@ -26,6 +28,6 @@
 
         get_template_part( 'template-parts/header/close-icon' );
 
-        ThemeMenus::main_menu( 'mobile-nav' );
+        Menus::main_menu( 'mobile-nav' );
     ?>
 </header>

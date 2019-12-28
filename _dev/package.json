@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "browser-sync": "^2.26.3",
+    "browser-sync": "^2.26.7",
     "svg4everybody": "^2.1.9",
     "webpack": "^4.27.0",
     "webpack-cli": "^3.1.2"
@@ -20,7 +20,7 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "uglifyjs-webpack-plugin": "^2.0.1",
-    "webpack-dev-server": "^3.1.10"
+    "webpack-dev-server": "^3.10.1"
   },
   "scripts": {
     "build": "webpack --mode production",

@@ -19,8 +19,6 @@ class StyleAndScriptController {
         add_action( 'wp_enqueue_scripts', [ $this, 'dequeue_js_files' ], 999 );
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_theme_styles' ], 999 );
         add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_theme_scripts' ], 999 );
-        //add_filter( 'clean_url', [ $this, 'defer_script_loading' ], 11, 1 );
-        //add_filter( 'style_loader_tag', [ $this, 'preload_stylesheets' ], 11, 4 );
     }
 
     //dequeues css files

@@ -1,8 +1,10 @@
 <?php
 
+namespace MySiteDigital\SimpleDining\Theme;
+
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-class ThemeMenus {
+class Menus {
 
     public function __construct() {
         add_action( 'init', [ $this, 'register_my_menus' ] );
@@ -11,7 +13,7 @@ class ThemeMenus {
 
     public function register_my_menus() {
         register_nav_menu( 'main-menu', 'Main Menu' );
-        register_nav_menu( 'call-now-link', $this->get_cta_link_title());
+        register_nav_menu( 'call-now-link', $this->get_cta_link_title() );
     }
 
     public function get_cta_link_title() {
@@ -75,9 +77,11 @@ class ThemeMenus {
                 'depth' => 1 ,
                 'echo' => false,
                 'fallback_cb' => false,
-                'walker' => new Call_Now_Menu_Walker()
+                'walker' => new CallNowWalker()
             ]
         );
+
+        die('sdfsdf');
 
         if( $call_now ){
             echo preg_replace(
@@ -93,4 +97,4 @@ class ThemeMenus {
 
 }
 
-new ThemeMenus();
+new Menus();

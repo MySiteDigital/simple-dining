@@ -1,3 +1,4 @@
+<?php use MySiteDigital\SimpleDining\Theme\Wrapper; ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
     <head>
@@ -25,9 +26,9 @@
         <?php
             global $post;
             $slug = $post ? $post->post_name : '';
-            get_header();
+            //get_header();
             echo '<main id="main" class="'.$slug.'">';
-                    include my_template_path();
+                include Wrapper::$main_template;
             echo '</main>';
             get_footer();
             wp_footer();

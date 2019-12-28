@@ -1,11 +1,14 @@
 <?php
+
+include_once( 'includes/theme/class-simple-dining-theme-call-now-walker.php' );
+include_once( 'includes/theme/class-simple-dining-theme-menus.php' );
+include_once( 'includes/theme/class-simple-dining-theme-wrapper.php' );
+
+
 //include any classes needed for the theme
-require_once( 'classes/call-now-menu-walker.php' );
-require_once( 'classes/style-and-script-controller.php' );
-require_once( 'classes/theme-customizer.php' );
-require_once( 'classes/theme-menus.php' );
-require_once( 'classes/theme-templates.php' );
-require_once( 'classes/theme-wrapper.php' );
+include_once( 'classes/style-and-script-controller.php' );
+include_once( 'classes/theme-customizer.php' );
+include_once( 'classes/theme-templates.php' );
 
 //add theme support for various features
 $defaults = [
@@ -22,29 +25,10 @@ add_theme_support( 'align-wide' );
 //hide the admin toolbar from the front end
 show_admin_bar( false );
 
-function icons( $echo = true ){
-    $icons = get_stylesheet_directory_uri() . '/assets/icons.svg';
-    if( $echo ){
-        echo $icons;
-    }
-    else {
-        return $icons;
-    }
-}
-
-
 register_sidebar(
     [
     	'id'          => 'footer-content',
     	'name'        => 'Footer Content',
-    	'description' => __( 'Allow\'s cusomt content to be added to the footer.', 'text_domain' ),
+    	'description' => __( 'Custom content that appears in the footer.', 'simple-dining' ),
     ]
 );
-
-function footer_widget(){
-    if ( is_active_sidebar( 'footer-content' ) ) {
-        echo '<ul id="footer-content" class="widget-area">';
-            dynamic_sidebar( 'footer-content' );
-        echo '</ul>';
-    }
-}
