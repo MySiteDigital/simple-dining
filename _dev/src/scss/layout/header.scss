@@ -57,10 +57,13 @@
     display: none;
 }
 
-#main-nav,
-#cloned-nav {
+#main-nav {
+    position: absolute;
+    display: none;
     margin-top: -1px;
     margin-left: auto;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 
     ul {
         display: flex;
@@ -81,8 +84,14 @@
     }
 }
 
+.visible {
+    #main-nav {
+        position: relative;
+        opacity: 1;
+    }
+}
+
 #main-nav,
-#cloned-nav,
 #mobile-nav {
 
     ul {
@@ -111,7 +120,6 @@
 
 #open-menu,
 #close-menu {
-    display: none;
     border: none;
     background: transparent;
     padding: 0;
@@ -183,12 +191,4 @@
     .call-now-button {
         clear: right;
     }
-}
-
-
-
-#cloned-nav, #cloned-cta {
-    display: block!important;
-    position: fixed;
-    bottom: -1000px;
 }

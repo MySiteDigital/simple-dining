@@ -1,10 +1,12 @@
 <?php
 
+namespace MySiteDigital\SimpleDining\Theme;
+
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-class ThemeCustomizer {
+class Customizer {
 
-    //selected based on the information found here:
+	 //selected based on the information found here:
     //https://kinsta.com/blog/best-google-fonts/
     //https://fonts.google.com/analytics
     //the following list could be interesting to include in the future
@@ -77,7 +79,61 @@ class ThemeCustomizer {
         		'title'      =>  __( 'Theme Options', 'simple-dining' ),
         		'priority'   => 1000,
     		]
-    	);
+        );
+        
+        $wp_customize->add_setting(
+            'show_call_now_button',
+            [
+                'default'           => true,
+                'transport'         => 'refresh',
+				'sanitize_callback' => [ $this, 'sanitize_checkbox'],
+			]
+		);
+
+        $wp_customize->add_control(
+            'show_call_now_button',
+            [
+				'description' => __('Show Call Now Button', 'simple-dining'),
+                'section' => 'theme_options',
+                'type' => 'checkbox',
+			]
+        );
+
+        $wp_customize->add_setting(
+            'call_now_button_text',
+            [
+                'default'           => 'Call Now!',
+                'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses'
+			]
+		);
+
+        $wp_customize->add_control(
+            'call_now_button_text',
+            [
+				'description' => __('Call Now Button Text (text shown next to phone icon)', 'simple-dining'),
+                'section' => 'theme_options',
+                'type' => 'text',
+			]
+        );
+
+        $wp_customize->add_setting(
+            'call_now_button_link',
+            [
+                'default'           => '+642044346464',
+                'transport'         => 'refresh',
+				'sanitize_callback' => 'wp_filter_nohtml_kses'
+			]
+		);
+
+        $wp_customize->add_control(
+            'call_now_button_link',
+            [
+				'description' => __('Phone (only include numbers and "+" sign at the beginning for international calling.)', 'simple-dining'),
+                'section' => 'theme_options',
+                'type' => 'text',
+			]
+        );
 
         $wp_customize->add_setting(
             'heading_font',
@@ -126,7 +182,7 @@ class ThemeCustomizer {
         	);
 
         	$wp_customize->add_control(
-        		new WP_Customize_Color_Control(
+        		new \WP_Customize_Color_Control(
         			$wp_customize,
         			$color_option,
         			[
@@ -137,14 +193,9 @@ class ThemeCustomizer {
         	);
         }
     }
-
-    public function theme_font( $font ){
-        return esc_html( get_theme_mod( $font . '_font' ) );
-    }
-
     public function enqueue_google_fonts(){
-        $heading_font = $this->theme_font( 'heading' );
-        $body_font = $this->theme_font( 'body' );
+        $heading_font = $this->get_theme_font( 'heading' );
+        $body_font = $this->get_theme_font( 'body' );
 
         if( $heading_font ) {
             wp_enqueue_style( 'simple-dining-heading-font', '//fonts.googleapis.com/css?family='. $heading_font );
@@ -157,8 +208,8 @@ class ThemeCustomizer {
     public function generate_customizer_css()
     {
         $customizer_css = '';
-        $heading_font = $this->theme_font( 'heading' );
-        $body_font = $this->theme_font( 'body' );
+        $heading_font = $this->get_theme_font( 'heading' );
+        $body_font = $this->get_theme_font( 'body' );
 
         if ( $body_font ) {
             $customizer_css .= 'body{font-family: ' . $this->font_choices[$body_font] . ';}';
@@ -189,12 +240,8 @@ class ThemeCustomizer {
         }
     }
 
-    public function sanitize_font( $font_input ) {
-        if ( array_key_exists( $font_input, $this->font_choices ) ) {
-    		return $font_input;
-    	} else {
-    		return '';
-    	}
+    public function get_theme_font( $font ){
+        return esc_html( get_theme_mod( $font . '_font' ) );
     }
 
     public function add_missing_hash( $color ){
@@ -203,6 +250,19 @@ class ThemeCustomizer {
         }
         return $color;
     }
+
+    public function sanitize_font( $font_input ) {
+        if ( array_key_exists( $font_input, $this->font_choices ) ) {
+    		return $font_input;
+    	} else {
+    		return '';
+    	}
+    }
+
+    public function sanitize_checkbox( $input ){
+        //returns true if checkbox is checked
+        return ( isset( $input ) ? true : false );
+    }
 }
 
-new ThemeCustomizer();
+new Customizer();

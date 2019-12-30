@@ -135,38 +135,40 @@ if ( ! trait_exists ( 'MySiteDigital\Assets\AssetsTrait' ) ) {
             }
         }
         
-        public function get_asset_location( $filename, $dir = false ){
+        public static function get_asset_location( $filename, $dir = false ){
             
-            $base = $this->base_url();
+            $base = self::base_url();
             
             if( $dir ){
-                $base = $this->base_path();
+                $base = self::base_path();
             }
 
-            if( $this->is_plugin() ){
+            if( self::is_plugin() ){
                 $base = str_replace( '/includes/assets', '', $base );
             }
 
             $type = substr( strrchr( $filename, '.' ), 1 );
 
-            return $base . 'assets/' . $type . '/' . $filename;
+            $asset_location = $base . '/assets/' . $type . '/' . $filename;
+
+            return $asset_location;
             
         }
 
-        public function get_asset_version( $filename ){
-            return @filemtime( $this->get_asset_location( $filename, true ) );
+        public static function get_asset_version( $filename ){
+            return @filemtime( self::get_asset_location( $filename, true ) );
         
         }
 
-        public function base_path(){
-            return $this->is_plugin() ? plugin_dir_path( __FILE__ ) : get_stylesheet_directory();
+        public static function base_path(){
+            return self::is_plugin() ? plugin_dir_path( __FILE__ ) : get_stylesheet_directory();
         }
 
-        public function base_url(){
-            return $this->is_plugin() ? plugin_dir_url( __FILE__ ) : get_stylesheet_directory_uri();;
+        public static function base_url(){
+            return self::is_plugin() ? plugin_dir_url( __FILE__ ) : get_stylesheet_directory_uri();;
         }
 
-        public function is_plugin(){
+        public static function is_plugin(){
             return strpos( str_replace( "\\", "/", plugin_dir_path( __FILE__ ) ) , str_replace( "\\", "/", WP_PLUGIN_DIR ) ) !== false;
         }
     }

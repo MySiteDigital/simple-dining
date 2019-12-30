@@ -1,3 +1,5 @@
+<?php use MySiteDigital\Assets\SVG; ?>
+
 <footer id="site-footer" class="clearfix">
     <?php
         if ( is_active_sidebar( 'footer-content' ) ) {
@@ -7,9 +9,7 @@
         }
     ?>
     <a href="/" id="copyright">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
-            <use xlink:href="<?php icons(); ?>#copyright"/>
-        </svg>
+        <?php SVG::icon( 'copyright' ); ?> 
         <span>
             <?php echo date('Y') . ' ' . get_bloginfo('name'); ?>
         </span>

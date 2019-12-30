@@ -66,6 +66,8 @@
     color: $my-white;
     color: var(--white);
     line-height: 1;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
 
     &:hover {
         border: 2px solid $java;
@@ -78,7 +80,7 @@
     }
 
     &.full-size {
-        margin-top: 0;
+        margin-top: 9px;
         margin-left: 40px;
         padding: 0 12px 0 0;
         border: 4px solid $my-white;
@@ -88,5 +90,11 @@
             border: 4px solid $java;
             border: 4px solid var(--highlight-color-1);
         }
+    }
+}
+
+.visible {
+    .call-now-button {
+        opacity: 1;
     }
 }

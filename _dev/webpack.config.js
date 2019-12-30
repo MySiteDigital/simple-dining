@@ -86,5 +86,6 @@ module.exports = {
         host: process.env.HOST, // Defaults to `localhost`
         port: 3000, // Defaults to 8080
         open: false, // Open the page in browser
+        historyApiFallback: false,
     },
 };

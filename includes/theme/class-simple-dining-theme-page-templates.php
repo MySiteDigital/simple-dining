@@ -2,7 +2,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-class ThemeTemplates {
+class PageTemplates {
 
     public function __construct() {
         add_filter( 'allowed_block_types', [ $this , 'set_allowed_block_types' ], 10, 2 );
@@ -29,4 +29,4 @@ class ThemeTemplates {
 
 }
 
-new ThemeTemplates();
+new PageTemplates();

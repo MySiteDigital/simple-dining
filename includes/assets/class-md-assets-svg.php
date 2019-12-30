@@ -18,23 +18,21 @@ if ( ! class_exists ( 'MySiteDigital\Assets\SVG' ) ) {
 
         use AssetsTrait;
 
-        public static function icon( $icon )
+        public static function icon( $icon, $class = '', $view_box = '' )
         {
+            $class = $class ? ' class="' . $class . '"' : '';
+            $view_box = $view_box ? ' viewBox="' . $view_box . '"' : ' viewBox="0 0 24 24"';
             echo 
-                '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"' . $view_box . $class .'>
                     <use xlink:href="' . self::icons_link( $icon ) . '"/>
                 </svg>';
         }
 
         public static function icons_link( $icon ){
-            $cacheBust = '?v=';
-            $iconsFile = 'assets/icons.svg';
-            $file_location = DD_PLUGIN_PATH . $iconsFile;
-            if( file_exists( $file_location ) ){
-                $cacheBust .= @filemtime( $file_location );
-            }
-            //make sure this is a relative url
-            $file_url = parse_url( DD_PLUGIN_URL, PHP_URL_PATH ) . $iconsFile . $cacheBust . '#' . $icon;
+            $icons_file = 'icons.svg';
+            $cache_bust = '?v=' . self::get_asset_version( $icons_file );
+            //make sure this is a relative url to work with Mulit Site
+            $file_url = parse_url( self::base_url(), PHP_URL_PATH ) . '/assets/svg/' . $icons_file . $cache_bust . '#' . $icon;
             return $file_url;
         }
 

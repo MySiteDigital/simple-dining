@@ -1,14 +1,16 @@
 <?php
 
-include_once( 'includes/theme/class-simple-dining-theme-call-now-walker.php' );
-include_once( 'includes/theme/class-simple-dining-theme-menus.php' );
+include_once( 'includes/assets/trait-md-assets-trait.php' );
+include_once( 'includes/assets/class-md-assets-svg.php' );
+
+include_once( 'includes/theme/class-simple-dining-theme-customizer.php' );
+include_once( 'includes/theme/class-simple-dining-theme-navigation.php' );
+include_once( 'includes/theme/class-simple-dining-theme-page-templates.php' );
 include_once( 'includes/theme/class-simple-dining-theme-wrapper.php' );
 
 
 //include any classes needed for the theme
 include_once( 'classes/style-and-script-controller.php' );
-include_once( 'classes/theme-customizer.php' );
-include_once( 'classes/theme-templates.php' );
 
 //add theme support for various features
 $defaults = [

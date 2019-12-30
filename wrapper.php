@@ -26,7 +26,7 @@
         <?php
             global $post;
             $slug = $post ? $post->post_name : '';
-            //get_header();
+            get_header();
             echo '<main id="main" class="'.$slug.'">';
                 include Wrapper::$main_template;
             echo '</main>';
