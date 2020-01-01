@@ -18,14 +18,21 @@ if ( ! class_exists ( 'MySiteDigital\Assets\SVG' ) ) {
 
         use AssetsTrait;
 
-        public static function icon( $icon, $class = '', $view_box = '' )
+        public static function icon( $icon, $class = '', $view_box = '', $echo = true )
         {
             $class = $class ? ' class="' . $class . '"' : '';
             $view_box = $view_box ? ' viewBox="' . $view_box . '"' : ' viewBox="0 0 24 24"';
-            echo 
+            $svg = 
                 '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"' . $view_box . $class .'>
                     <use xlink:href="' . self::icons_link( $icon ) . '"/>
                 </svg>';
+
+            if( $echo ){
+                echo $svg;
+            }
+            else {
+                return $svg;
+            }
         }
 
         public static function icons_link( $icon ){

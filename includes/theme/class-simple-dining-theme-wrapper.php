@@ -19,7 +19,8 @@ class Wrapper {
     public function __construct()
     {
 		add_filter( 'template_include', [ __CLASS__, 'wrap' ], 99 );
-    }
+	}
+	
 
 	public static function wrap( $template ) {
 		self::$main_template = $template;
