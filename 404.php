@@ -1,3 +1,5 @@
+<?php use MySiteDigital\SimpleDining\Theme\Navigation; ?>
+
 <div class="container">
     <div class="error-404 not-found">
 
@@ -12,7 +14,7 @@
                 Sorry, the URL you are looking for doesn’t exist. Maybe you can find what you are looking for in the menu below.
             </p>
     		<?php
-    		      ThemeMenus::main_menu( 'page-not-found-nav' );
+                Navigation::main_nav_menu( 'page-not-found-nav' );
     		?>
     	</div>
 
