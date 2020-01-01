@@ -11,15 +11,13 @@ svg4everybody();
         jQuery(document).ready(
             function() {
                 navigation.init();
-                console.log('ready');
-                
             }
         );
 
         jQuery(window).on(
             'load',
             function() {
-
+                
             }
         );
 

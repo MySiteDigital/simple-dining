@@ -1,6 +1,6 @@
 <?php use MySiteDigital\Assets\SVG; ?>
 
-<div class="mobile-icons">
+<div class="nav-icons">
     <button type="button" id="open-menu">
         <?php 
             SVG::icon( 'open-menu' ); 

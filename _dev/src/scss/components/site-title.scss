@@ -1,0 +1,21 @@
+.site-title {
+    border-bottom: 2px solid transparent;
+    font-size: 2.4rem;
+
+    &:hover {
+        border-bottom: 2px solid $java;
+        border-bottom: 2px solid var(--highlight-color-1);
+    }
+
+    &.custom-logo-link {
+        display: inline-block;
+        vertical-align: middle;
+        max-width: 125px;
+        height: 75px;
+        font-size: 3rem;
+
+        &:hover {
+            border-bottom: none;
+        }
+    }
+}

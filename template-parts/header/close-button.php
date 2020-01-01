@@ -1,6 +1,6 @@
 <?php use MySiteDigital\Assets\SVG; ?>
 
-<div class="mobile-icons">
+<div class="nav-icons">
     <button type="button" id="close-menu">
         <?php 
             SVG::icon( 'close-menu' ); 

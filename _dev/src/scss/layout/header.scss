@@ -31,127 +31,6 @@
     }
 }
 
-.site-title {
-    border-bottom: 2px solid transparent;
-    font-size: 2.4rem;
-
-    &:hover {
-        border-bottom: 2px solid $java;
-        border-bottom: 2px solid var(--highlight-color-1);
-    }
-
-    &.custom-logo-link {
-        display: inline-block;
-        vertical-align: middle;
-        max-width: 125px;
-        height: 75px;
-        font-size: 3rem;
-
-        &:hover {
-            border-bottom: none;
-        }
-    }
-}
-
-.mobile-icons {
-    display: none;
-}
-
-#main-nav {
-    position: absolute;
-    display: none;
-    margin-top: -1px;
-    margin-left: auto;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-
-    ul {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-
-        li {
-            display: inline;
-            flex-shrink:0;
-            margin: 0;
-            padding-left: 40px;
-
-            &.current_page_item a {
-                border-bottom: 2px solid $java;
-                border-bottom: 2px solid var(--highlight-color-1);
-            }
-        }
-    }
-}
-
-.visible {
-    #main-nav {
-        position: relative;
-        opacity: 1;
-    }
-}
-
-#main-nav,
-#mobile-nav {
-
-    ul {
-        margin: 0;
-        padding: 0;
-
-        li {
-            list-style: none;
-
-            &.current_page_item a {
-                color: $java;
-                color: var(--highlight-color-1);
-            }
-        }
-    }
-
-    a {
-        @extend .site-title;
-    }
-
-}
-
-#mobile-nav a:hover {
-    border-color: transparent;
-}
-
-#open-menu,
-#close-menu {
-    border: none;
-    background: transparent;
-    padding: 0;
-    cursor: pointer;
-
-    svg {
-        display: block;
-        width: 24px;
-        fill: $my-white;
-        fill: var(--white);
-    }
-
-    &:hover svg {
-        fill: $java;
-        fill: var(--highlight-color-1);
-    }
-}
-
-#open-menu {
-    svg {
-        width: 32px;
-    }
-}
-
-#close-menu {
-    padding: 0 4px;
-}
-
-.mobile-icons {
-    margin-left: auto;
-}
-
 #hidden-menu {
     position: fixed;
     top: 0;
@@ -170,10 +49,6 @@
     }
 }
 
-#mobile-nav {
-    clear: both;
-}
-
 #hidden-menu,
 #site-header.hidden-menu {
     @extend .clearfix;
@@ -183,7 +58,7 @@
         float: left;
     }
 
-    .mobile-icons,
+    .nav-icons,
     .call-now-button {
         float: right;
     }

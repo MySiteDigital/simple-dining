@@ -116,6 +116,7 @@ class StyleAndScriptController {
 		}
 
         $socket = @fsockopen('localhost', 3000, $errno, $errstr, 1);
+
         return $socket ? true : false;
     }
 }

@@ -1,0 +1,45 @@
+.nav-icons {
+    display: none;
+    margin-left: auto;
+}
+
+#open-menu,
+#close-menu {
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+
+    svg {
+        display: block;
+        width: 24px;
+        fill: $my-white;
+        fill: var(--white);
+        opacity: 0;
+        transition: opacity 1s;
+    }
+
+    &:hover svg {
+        fill: $java;
+        fill: var(--highlight-color-1);
+    }
+}
+
+#open-menu {
+    svg {
+        width: 32px;
+    }
+}
+
+#close-menu {
+    padding: 0 4px;
+}
+
+.visible {
+    #open-menu,
+    #close-menu {
+        svg {
+            opacity: 1;
+        }
+    }
+}

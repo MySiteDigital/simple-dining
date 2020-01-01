@@ -6,62 +6,60 @@ var nav = {
 
     mainNav: jQuery('#main-nav'),
 
-    clonedNav: '',
+    logo: jQuery('.custom-logo-link'),
 
-    mobileIcons: jQuery('.mobile-icons'),
+    callNowButton: jQuery('.call-now-button'),
+
+    callNowButtonWidth: jQuery('.call-now-button').outerWidth(true),
+
+    logoWidth: 0,
+
+    mainNavWidth: 0,
+
+    callNowButtonWidth: 0,
+
+    mobileIcons: jQuery('.nav-icons'),
 
     openButton: jQuery('#open-menu'),
 
     closeButton: jQuery('#close-menu'),
 
-    callNowButton: jQuery('.call-now-button'),
-
-    clonedCallNowButton: '',
-
-    logoWidth: jQuery('.custom-logo-link').width(),
-
-    callNowButtonWidth: jQuery('.call-now-button').width(),
-
-    mainNavWidth: 0,
-
     init: function() {
-        nav.getMainNavWidth();
+        nav.setWidthProperties();
         nav.toggleMainNavDisplay();
         nav.activateListeners();
     },
 
-    getMainNavWidth: function(){
+    setWidthProperties: function(){
         nav.mainNav.show();
         nav.mainNavWidth = nav.mainNav.outerWidth();
         nav.mainNav.hide();
+
+        nav.mainCallNowButtonWidth = nav.callNowButton.outerWidth(true);
+        nav.logoWidth = nav.logo.outerWidth(true);
     },
 
     toggleMainNavDisplay: function(){
-        let availableNavWidth = nav.siteHeader.width() - (nav.logoWidth + nav.callNowButtonWidth);
-        console.log(availableNavWidth);
-        console.log(nav.mainNavWidth);
-        
+        let availableNavWidth = nav.siteHeader.width() - (nav.logoWidth + nav.mainCallNowButtonWidth);
         if (availableNavWidth <= nav.mainNavWidth){
             nav.siteHeader.addClass('hidden-menu');
             nav.hiddenMenu.addClass('hidden-menu');
             nav.callNowButton.removeClass('full-size');
             nav.mainNav.hide();
-            // nav.mobileIcons.show();
-            // nav.openButton.css('display', 'block');
+            nav.mobileIcons.show();
         }
         else {
             nav.siteHeader.removeClass('hidden-menu');
             nav.hiddenMenu.removeClass('hidden-menu');
             nav.callNowButton.addClass('full-size');
             nav.mainNav.show();
-            // nav.mainNav.css('visibility', 'visible');
-            // nav.mobileIcons.hide();
-            // nav.openButton.css('display', 'none');
+            nav.mobileIcons.hide();
         }
 
         window.setTimeout(
             function () {
                 nav.siteHeader.addClass('visible');
+                nav.hiddenMenu.addClass('visible');
             }, 
             1000
         );
