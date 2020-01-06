@@ -6,8 +6,10 @@ include_once( 'includes/assets/class-md-assets-svg.php' );
 
 include_once( 'includes/theme/class-simple-dining-theme-customizer.php' );
 include_once( 'includes/theme/class-simple-dining-theme-navigation.php' );
-include_once( 'includes/theme/class-simple-dining-theme-page-templates.php' );
 include_once( 'includes/theme/class-simple-dining-theme-wrapper.php' );
+
+include_once( 'includes/theme/pages/class-simple-dining-theme-pages-contact-page.php' );
+include_once( 'includes/theme/pages/class-simple-dining-theme-pages-hero-page.php' );
 
 include_once( 'includes/theme/widgets/class-simple-dining-theme-widgets-contact-details.php' );
 
