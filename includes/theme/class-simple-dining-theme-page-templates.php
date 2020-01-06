@@ -11,9 +11,11 @@ class PageTemplates {
     public function set_allowed_block_types( $allowed_block_types, $post ) {
 
         $template = get_post_meta( $post->ID, '_wp_page_template', true );
+        
         if ( $template === 'contact-page.php' ) {
             $allowed_block_types = $this->set_contact_page_blocks();
         }
+
         return $allowed_block_types;
     }
 
@@ -22,8 +24,7 @@ class PageTemplates {
             'core/heading',
             'core/paragraph',
             'core/columns',
-            'core/shortcode',
-            'mysite/contact-details'
+            'core/shortcode'
         ];
     }
 

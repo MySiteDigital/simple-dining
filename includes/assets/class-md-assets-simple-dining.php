@@ -20,6 +20,18 @@ class SimpleDining {
 
     use AssetsTrait;
 
+    protected $frontend_styles = [
+        'handle' => 'simple-dining',
+        'src' => 'theme.css',
+        'post_types' => [ 'all' ],
+    ];
+    
+    protected $frontend_scripts = [
+        'handle' => 'simple-dining',
+        'src' => 'theme.js',
+        'post_types' => [ 'all' ],
+    ];
+
     public function __construct() {
        $this->init();
     }

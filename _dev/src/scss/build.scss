@@ -13,19 +13,19 @@
 
 /* components */
 @import 'components/buttons';
-// @import 'components/contact-form-7';
-// @import 'components/content-excerpt';
+@import 'components/contact-form-7';
+@import 'components/entry-footer';
 @import 'components/navigation';
 @import 'components/nav-icons';
-// @import 'components/pagination';
+@import 'components/pagination';
 @import 'components/site-title';
 @import 'components/utilities';
 
 /* base */
-// @import 'base/forms';
+@import 'base/forms';
 @import 'base/html-elements';
-// @import 'base/print';
-// @import 'base/typography';
+@import 'base/print';
+@import 'base/typography';
 
 /* layout */
 @import 'layout/header';

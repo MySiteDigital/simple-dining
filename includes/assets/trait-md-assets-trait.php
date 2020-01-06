@@ -57,9 +57,16 @@ if ( ! trait_exists ( 'MySiteDigital\Assets\AssetsTrait' ) ) {
             }
 
             if( property_exists( self::class, 'frontend_scripts' ) ){
+                
+                $script = $this->get_asset_location( $this->frontend_scripts['src'] );
+
+                if( $this->is_webpack_dev_server() ){
+                    $script = 'http://localhost:3000/' . $this->frontend_scripts['src'];
+                }
+
                 wp_register_script(
                     $this->frontend_scripts[ 'handle' ],
-                    $this->get_asset_location( $this->frontend_scripts['src'] ),
+                    $script,
                     [ 'jquery' ],
                     $this->get_asset_version( $this->frontend_scripts['src'] ),
                     true
@@ -105,6 +112,10 @@ if ( ! trait_exists ( 'MySiteDigital\Assets\AssetsTrait' ) ) {
 
         public function enqueue_frontend_styles(){
             global $post;
+
+            if( $this->is_webpack_dev_server() ){
+                return;
+            }
 
             if( property_exists( self::class, 'frontend_styles' ) ){
                 if( in_array( $post->post_type, $this->frontend_styles[ 'post_types' ] ) || in_array( 'all', $this->frontend_styles[ 'post_types' ] ) ){
@@ -170,6 +181,16 @@ if ( ! trait_exists ( 'MySiteDigital\Assets\AssetsTrait' ) ) {
 
         public static function is_plugin(){
             return strpos( str_replace( "\\", "/", plugin_dir_path( __FILE__ ) ) , str_replace( "\\", "/", WP_PLUGIN_DIR ) ) !== false;
+        }
+
+        public function is_webpack_dev_server(){
+            if( ! defined( 'WP_ENV' ) || WP_ENV !== 'dev' ){
+                return false;
+            }
+
+            $socket = @fsockopen( 'localhost', 3000, $errno, $errstr, 1 );
+
+            return $socket ? true : false;
         }
     }
 }

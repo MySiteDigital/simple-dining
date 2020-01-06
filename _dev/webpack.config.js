@@ -15,7 +15,7 @@ module.exports = {
     },
     output: {
        path: path.resolve(__dirname),
-       filename: devMode ? '[name].min.js' : '../assets/js/[name].min.js',
+       filename: devMode ? '[name].js' : '../assets/js/[name].js',
     },
     watch: devMode,
     optimization: {
@@ -34,7 +34,7 @@ module.exports = {
         // extract css into dedicated file
         new MiniCssExtractPlugin(
             {
-                filename: devMode ? 'css/[name].min.css' : '../assets/css/[name].min.css'
+                filename: devMode ? 'css/[name].css' : '../assets/css/[name].css'
             }
         ),
     ],
