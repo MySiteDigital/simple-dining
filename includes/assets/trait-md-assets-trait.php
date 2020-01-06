@@ -113,7 +113,7 @@ if ( ! trait_exists ( 'MySiteDigital\Assets\AssetsTrait' ) ) {
         public function enqueue_frontend_styles(){
             global $post;
 
-            if( $this->is_webpack_dev_server() ){
+            if( ! is_object( $post ) || $this->is_webpack_dev_server() ){
                 return;
             }
 
@@ -126,6 +126,10 @@ if ( ! trait_exists ( 'MySiteDigital\Assets\AssetsTrait' ) ) {
 
         public function enqueue_frontend_scripts(){
             global $post;
+
+            if( ! is_object( $post ) ) {
+                return;
+            }
 
             if( property_exists( self::class, 'frontend_scripts' ) ){
                 if( in_array( $post->post_type, $this->frontend_scripts[ 'post_types' ] ) || in_array( 'all', $this->frontend_scripts[ 'post_types' ] ) ){
