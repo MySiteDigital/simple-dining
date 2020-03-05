@@ -69,7 +69,7 @@ class HeroPage  {
      public function remove_meta_boxes() {
         global $post;
 
-        if ( $this->is_hero_page( $post->ID ) ) {
+        if ( is_object( $post ) && $this->is_hero_page( $post->ID ) ) {
             remove_meta_box( 'commentstatusdiv', 'page', 'normal' );
             remove_meta_box( 'commentsdiv', 'page', 'normal' );
         }

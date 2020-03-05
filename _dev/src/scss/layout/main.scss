@@ -26,3 +26,13 @@ article,
     max-width: 600px;
     margin: 0 auto;
 }
+
+article.type-menu {
+    max-width: 100%;
+
+    .entry-header {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
