@@ -150,15 +150,15 @@ if ( ! trait_exists ( 'MySiteDigital\Assets\AssetsTrait' ) ) {
             }
         }
         
-        public static function get_asset_location( $filename, $dir = false ){
+        public function get_asset_location( $filename, $type = '', $dir = false ){
             
-            $base = self::base_url();
-            
+            $base = self::base_url( $type );
+
             if( $dir ){
-                $base = self::base_path();
+                $base = self::base_path( $type );
             }
 
-            if( self::is_plugin() ){
+            if( self::is_plugin( $type ) ){
                 $base = str_replace( '/includes/assets', '', $base );
             }
 
@@ -170,21 +170,20 @@ if ( ! trait_exists ( 'MySiteDigital\Assets\AssetsTrait' ) ) {
             
         }
 
-        public static function get_asset_version( $filename ){
-            return @filemtime( self::get_asset_location( $filename, true ) );
-        
+        public function get_asset_version( $filename, $type = '' ){
+            return @filemtime( self::get_asset_location( $filename, $type, true ) );
         }
 
-        public static function base_path(){
-            return self::is_plugin() ? plugin_dir_path( __FILE__ ) : get_stylesheet_directory();
+        public static function base_path( $type ){
+            return self::is_plugin( $type ) ? plugin_dir_path( __FILE__ ) : get_stylesheet_directory();
         }
 
-        public static function base_url(){
-            return self::is_plugin() ? plugin_dir_url( __FILE__ ) : get_stylesheet_directory_uri();;
+        public static function base_url( $type ){
+            return self::is_plugin( $type ) ? plugin_dir_url( __FILE__ ) : get_stylesheet_directory_uri();;
         }
 
-        public static function is_plugin(){
-            return strpos( str_replace( "\\", "/", plugin_dir_path( __FILE__ ) ) , str_replace( "\\", "/", WP_PLUGIN_DIR ) ) !== false;
+        public static function is_plugin( $type ){
+            return $type === 'theme' ? false : true;
         }
 
         public function is_webpack_dev_server(){

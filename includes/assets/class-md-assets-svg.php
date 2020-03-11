@@ -37,9 +37,9 @@ if ( ! class_exists ( 'MySiteDigital\Assets\SVG' ) ) {
 
         public static function icons_link( $icon ){
             $icons_file = 'icons.svg';
-            $cache_bust = '?v=' . self::get_asset_version( $icons_file );
-            //make sure this is a relative url to work with Mulit Site
-            $file_url = parse_url( self::base_url(), PHP_URL_PATH ) . '/assets/svg/' . $icons_file . $cache_bust . '#' . $icon;
+            $cache_bust = '?v=' . self::get_asset_version( $icons_file, 'theme' );
+            //make sure this is a relative url to work with MultiSite
+            $file_url = parse_url( self::base_url( 'theme' ), PHP_URL_PATH ) . '/assets/svg/' . $icons_file . $cache_bust . '#' . $icon;
             return $file_url;
         }
 

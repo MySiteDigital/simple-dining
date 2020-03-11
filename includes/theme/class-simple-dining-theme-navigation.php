@@ -24,7 +24,7 @@ class Navigation {
             ]
         );
 
-        if( $main_menu ){
+        if ( has_nav_menu( 'main-menu' ) ) {
             echo $main_menu;
         }
     }

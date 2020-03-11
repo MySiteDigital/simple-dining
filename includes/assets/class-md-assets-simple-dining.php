@@ -21,12 +21,14 @@ class SimpleDining {
     use AssetsTrait;
 
     protected $frontend_styles = [
+        'type' => 'theme',
         'handle' => 'simple-dining',
         'src' => 'theme.css',
         'post_types' => [ 'all' ],
     ];
     
     protected $frontend_scripts = [
+        'type' => 'theme',
         'handle' => 'simple-dining',
         'src' => 'theme.js',
         'post_types' => [ 'all' ],
