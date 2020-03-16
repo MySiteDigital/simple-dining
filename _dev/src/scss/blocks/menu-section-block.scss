@@ -2,8 +2,33 @@
     
     margin: 24px auto;
 
+    &.alignnarrow{
+        &.cols-1 {
+            max-width: 1200px;
+
+            .wp-block-dining-dashboard-menu-item {
+                max-width: none;
+            }
+        }
+    }
+
+    &.alignwide {
+        &.cols-1 {
+            .wp-block-dining-dashboard-menu-item {
+                max-width: none;
+            }
+        }
+    }
+
     &.alignfull {
         margin: 24px 0 !important;
         padding: 0 24px;
+
+        &.cols-1 {
+
+            .wp-block-dining-dashboard-menu-item {
+                max-width: none;
+            }
+        }
     }
 }

@@ -33,7 +33,7 @@ if ( ! trait_exists ( 'MySiteDigital\Assets\AssetsTrait' ) ) {
                     $this->editor_styles[ 'handle' ],
                     $this->get_asset_location( $this->editor_styles['src'] ),
                     [ 'wp-edit-blocks' ],
-                    $this->get_asset_version( $this->editor_styles['src'] )
+                    self::get_asset_version( $this->editor_styles['src'] )
                 );
             }
 
@@ -42,7 +42,7 @@ if ( ! trait_exists ( 'MySiteDigital\Assets\AssetsTrait' ) ) {
                     $this->editor_scripts[ 'handle' ],
                     $this->get_asset_location( $this->editor_scripts['src'] ),
                     [ 'wp-blocks', 'wp-i18n', 'wp-element' ],
-                    $this->get_asset_version( $this->editor_scripts['src'] ),
+                    self::get_asset_version( $this->editor_scripts['src'] ),
                     true
                 );
             }
@@ -52,7 +52,7 @@ if ( ! trait_exists ( 'MySiteDigital\Assets\AssetsTrait' ) ) {
                     $this->frontend_styles[ 'handle' ],
                     $this->get_asset_location( $this->frontend_styles['src'] ),
                     [],
-                    $this->get_asset_version( $this->frontend_styles['src'] )
+                    self::get_asset_version( $this->frontend_styles['src'] )
                 );
             }
 
@@ -68,7 +68,7 @@ if ( ! trait_exists ( 'MySiteDigital\Assets\AssetsTrait' ) ) {
                     $this->frontend_scripts[ 'handle' ],
                     $script,
                     [ 'jquery' ],
-                    $this->get_asset_version( $this->frontend_scripts['src'] ),
+                    self::get_asset_version( $this->frontend_scripts['src'] ),
                     true
                 );
             }
@@ -78,7 +78,7 @@ if ( ! trait_exists ( 'MySiteDigital\Assets\AssetsTrait' ) ) {
                     $this->admin_styles[ 'handle' ],
                     $this->get_asset_location( $this->admin_styles['src'] ),
                     [],
-                    $this->get_asset_version( $this->admin_styles['src'] )
+                    self::get_asset_version( $this->admin_styles['src'] )
                 );
             }
 
@@ -87,7 +87,7 @@ if ( ! trait_exists ( 'MySiteDigital\Assets\AssetsTrait' ) ) {
                     $this->admin_scripts[ 'handle' ],
                     $this->get_asset_location( $this->admin_scripts['src'] ),
                     [ 'jquery' ],
-                    $this->get_asset_version( $this->admin_scripts['src'] ),
+                    self::get_asset_version( $this->admin_scripts['src'] ),
                     true
                 );
             }
@@ -170,7 +170,7 @@ if ( ! trait_exists ( 'MySiteDigital\Assets\AssetsTrait' ) ) {
             
         }
 
-        public function get_asset_version( $filename, $type = '' ){
+        public static function get_asset_version( $filename, $type = '' ){
             return @filemtime( self::get_asset_location( $filename, $type, true ) );
         }
 
