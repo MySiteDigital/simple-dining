@@ -23,6 +23,7 @@
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
+        <a class="skip-link screen-reader-text" href="#main">Skip to the content</a>
         <?php
             global $post;
             $slug = $post ? $post->post_name : '';
