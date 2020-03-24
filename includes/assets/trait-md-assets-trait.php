@@ -50,15 +50,15 @@ if ( ! trait_exists ( 'MySiteDigital\Assets\AssetsTrait' ) ) {
             if( property_exists( self::class, 'frontend_styles' ) ){
                 wp_register_style(
                     $this->frontend_styles[ 'handle' ],
-                    $this->get_asset_location( $this->frontend_styles['src'] ),
+                    $this->get_asset_location( $this->frontend_styles['src'], $this->frontend_styles['type'] ),
                     [],
-                    self::get_asset_version( $this->frontend_styles['src'] )
+                    self::get_asset_version( $this->frontend_styles['src'], $this->frontend_styles['type'] )
                 );
             }
 
             if( property_exists( self::class, 'frontend_scripts' ) ){
                 
-                $script = $this->get_asset_location( $this->frontend_scripts['src'] );
+                $script = $this->get_asset_location( $this->frontend_scripts['src'], $this->frontend_styles['type'] );
 
                 if( $this->is_webpack_dev_server() ){
                     $script = 'http://localhost:3000/' . $this->frontend_scripts['src'];
@@ -68,7 +68,7 @@ if ( ! trait_exists ( 'MySiteDigital\Assets\AssetsTrait' ) ) {
                     $this->frontend_scripts[ 'handle' ],
                     $script,
                     [ 'jquery' ],
-                    self::get_asset_version( $this->frontend_scripts['src'] ),
+                    self::get_asset_version( $this->frontend_scripts['src'], $this->frontend_styles['type'] ),
                     true
                 );
             }
@@ -149,10 +149,11 @@ if ( ! trait_exists ( 'MySiteDigital\Assets\AssetsTrait' ) ) {
                 wp_enqueue_script( $this->admin_scripts[ 'handle' ] );
             }
         }
-        
+
         public function get_asset_location( $filename, $type = '', $dir = false ){
             
             $base = self::base_url( $type );
+
 
             if( $dir ){
                 $base = self::base_path( $type );
@@ -162,6 +163,7 @@ if ( ! trait_exists ( 'MySiteDigital\Assets\AssetsTrait' ) ) {
                 $base = str_replace( '/includes/assets', '', $base );
             }
 
+
             $type = substr( strrchr( $filename, '.' ), 1 );
 
             $asset_location = $base . '/assets/' . $type . '/' . $filename;
@@ -170,8 +172,10 @@ if ( ! trait_exists ( 'MySiteDigital\Assets\AssetsTrait' ) ) {
             
         }
 
-        public static function get_asset_version( $filename, $type = '' ){
+
+        public static function get_asset_version( $filename, $type = ''){
             return @filemtime( self::get_asset_location( $filename, $type, true ) );
+        
         }
 
         public static function base_path( $type ){
