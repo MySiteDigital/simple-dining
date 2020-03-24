@@ -216,7 +216,7 @@ class Customizer {
         }
 
         if ( $heading_font ) {
-            $customizer_css .= 'h1, h2, h3, h4, h5, h6, input[type="submit"], #header a, #footer a, .button {font-family: ' . $this->font_choices[$heading_font] . ';}';
+            $customizer_css .= 'h1, h2, h3, h4, h5, h6, input[type="submit"], #site-header a, #site-footer a, .button {font-family: ' . $this->font_choices[$heading_font] . ';}';
         }
 
         $custom_colors = '';
