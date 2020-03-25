@@ -10,4 +10,10 @@
 		?>
 	</div>
 
+	<div class="entry-footer">
+		<?php
+		    the_tags();
+		?>
+	</div>
+
 </article>

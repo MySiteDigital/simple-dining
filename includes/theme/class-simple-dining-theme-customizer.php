@@ -177,7 +177,8 @@ class Customizer {
         			'default' => $color_option_settings['default'],
         			'transport'         => 'refresh',
                     'type' => 'theme_mod',
-                    'capability' => 'edit_theme_options'
+                    'capability' => 'edit_theme_options',
+                    'sanitize_callback' => 'sanitize_hex_color'
         		]
         	);
 
@@ -186,7 +187,7 @@ class Customizer {
         			$wp_customize,
         			$color_option,
         			[
-        				'description' => __( $color_option_settings['description'], 'simple-dining' ),
+        				'description' => $color_option_settings['description'],
         				'section'     => 'theme_options',
         			]
         		)

@@ -1,5 +1,7 @@
 <?php 
 
+extract( $instance );
+
 use MySiteDigital\Assets\SVG;
 
 echo '<dl>';

@@ -24,9 +24,8 @@ $defaults = [
 add_theme_support( 'custom-logo', $defaults );
 add_theme_support( 'post-thumbnails' );
 add_theme_support( 'align-wide' );
-
-//hide the admin toolbar from the front end
-show_admin_bar( false );
+add_theme_support( 'automatic-feed-links' );
+add_theme_support( 'title-tag' );
 
 register_sidebar(
     [
@@ -36,8 +35,30 @@ register_sidebar(
     ]
 );
 
+if ( ! isset( $content_width ) ) {
+	$content_width = 600;
+}
+
+
 // disable srcset on frontend
 function disable_wp_responsive_images() {
 	return 1;
 }
-add_filter('max_srcset_image_width', 'disable_wp_responsive_images');
+
+add_filter( 'max_srcset_image_width', 'disable_wp_responsive_images' );
+
+
+function custom_theme_title( $title ) {
+	$title = get_bloginfo( 'name' );
+    if( is_front_page() ){
+        if( is_home() ){
+            $title .= ' - Latest Posts';
+        }
+        else {
+            $title .= ' - ' . get_bloginfo( 'description' );
+        }
+    }
+    return $title;
+}
+
+add_filter( 'pre_get_document_title', 'custom_theme_title' );

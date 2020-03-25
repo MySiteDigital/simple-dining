@@ -33,6 +33,8 @@ class Navigation {
         if( self::is_call_now_button_enabled() ){
             $button_text = get_theme_mod( 'call_now_button_text' ) ?: 'Call Now!';
             $tel_link = get_theme_mod( 'call_now_button_link' ) ?: '+642044346464';
+            //get_template_part function should be improved
+		    //https://mekshq.com/passing-variables-via-get_template_part-wordpress/
             include( locate_template( 'template-parts/header/call-now-button.php', false, false ) );
         }
         else {

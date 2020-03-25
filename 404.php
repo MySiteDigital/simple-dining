@@ -11,7 +11,7 @@
 
     	<div class="entry-content">
             <p>
-                Sorry, the URL you are looking for doesn’t exist. Maybe you can find what you are looking for in the menu below.
+                Sorry, the URL you are looking for doesn't exist. Maybe you can find what you are looking for in the menu below.
             </p>
     		<?php
                 Navigation::main_nav_menu( 'page-not-found-nav' );

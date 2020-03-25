@@ -116,7 +116,9 @@ class ContactDetails extends \WP_Widget {
 
 	public function widget( $args, $instance ) {
 		extract( $instance );
-		include( locate_template( 'template-parts/footer/contact-details-widget.php', false, false ) );
+		//get_template_part function should be improved
+		//https://mekshq.com/passing-variables-via-get_template_part-wordpress/
+		include( locate_template('template-parts/footer/contact-details-widget.php', false, false ) );
 	}
 }
 
