@@ -15,7 +15,8 @@
         align-items: center;
     }
 
-    .page-numbers {
+    .page-numbers,
+    .post-page-numbers {
         padding: 0 4px;
         font-weight: bold;
 
@@ -25,7 +26,8 @@
     }
 
     .prev,
-    .next {
+    .next,
+    .post-page-numbers {
         display: flex;
         align-items: center;
 
@@ -37,11 +39,13 @@
         }
     }
 
-    .prev {
+    .prev,
+    .post-page-numbers:first-of-type {
         margin-right: auto;
     }
 
-    .next {
+    .next,
+    .post-page-numbers:last-of-type {
         margin-left: auto;
     }
 

@@ -6,14 +6,17 @@
 
 	<div class="entry-content">
 		<?php
-		    the_content();
+			the_content();
 		?>
 	</div>
 
-	<div class="entry-footer">
-		<?php
-		    the_tags();
-		?>
-	</div>
-
+	<?php 
+		if(has_tag()){
+			echo '<div class="entry-footer">';
+					the_tags();
+			echo '</div>';
+		}
+	?>
 </article>
+
+<?php get_template_part( 'template-parts/navigation/link-pages' ); ?>

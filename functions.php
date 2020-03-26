@@ -40,14 +40,6 @@ if ( ! isset( $content_width ) ) {
 }
 
 
-// disable srcset on frontend
-function disable_wp_responsive_images() {
-	return 1;
-}
-
-add_filter( 'max_srcset_image_width', 'disable_wp_responsive_images' );
-
-
 function custom_theme_title( $title ) {
 	$title = get_bloginfo( 'name' );
     if( is_front_page() ){
@@ -62,3 +54,10 @@ function custom_theme_title( $title ) {
 }
 
 add_filter( 'pre_get_document_title', 'custom_theme_title' );
+
+// disable srcset on frontend
+function disable_wp_responsive_images() {
+	return 1;
+}
+
+add_filter( 'max_srcset_image_width', 'disable_wp_responsive_images' );

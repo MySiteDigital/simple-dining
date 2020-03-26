@@ -24,7 +24,6 @@
   },
   "scripts": {
     "build": "webpack --mode production",
-    "watch": "webpack --mode development --env.dist=false",
     "dev": "webpack-dev-server --mode development"
   },
   "keywords": [],

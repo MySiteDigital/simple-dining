@@ -175,7 +175,6 @@ if ( ! trait_exists ( 'MySiteDigital\Assets\AssetsTrait' ) ) {
 
         public static function get_asset_version( $filename, $type = ''){
             return @filemtime( self::get_asset_location( $filename, $type, true ) );
-        
         }
 
         public static function base_path( $type ){
@@ -194,7 +193,7 @@ if ( ! trait_exists ( 'MySiteDigital\Assets\AssetsTrait' ) ) {
             if( ! defined( 'WP_ENV' ) || WP_ENV !== 'dev' ){
                 return false;
             }
-
+            $socket = false;
             $socket = @fsockopen( 'localhost', 3000, $errno, $errstr, 1 );
 
             return $socket ? true : false;
