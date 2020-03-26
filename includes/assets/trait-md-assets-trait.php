@@ -111,31 +111,30 @@ if ( ! trait_exists ( 'MySiteDigital\Assets\AssetsTrait' ) ) {
         }
 
         public function enqueue_frontend_styles(){
-            global $post;
-
-            if( ! is_object( $post ) || $this->is_webpack_dev_server() ){
+            if( $this->is_webpack_dev_server() ){
                 return;
             }
 
             if( property_exists( self::class, 'frontend_styles' ) ){
-                if( in_array( $post->post_type, $this->frontend_styles[ 'post_types' ] ) || in_array( 'all', $this->frontend_styles[ 'post_types' ] ) ){
+                if( $this->can_enqueue( $this->frontend_styles[ 'post_types' ] ) ){
                     wp_enqueue_style( $this->frontend_styles[ 'handle' ] );
                 }
             }
         }
 
         public function enqueue_frontend_scripts(){
-            global $post;
-
-            if( ! is_object( $post ) ) {
-                return;
-            }
-
             if( property_exists( self::class, 'frontend_scripts' ) ){
-                if( in_array( $post->post_type, $this->frontend_scripts[ 'post_types' ] ) || in_array( 'all', $this->frontend_scripts[ 'post_types' ] ) ){
+                if( $this->can_enqueue( $this->frontend_scripts[ 'post_types' ] ) ) {
                     wp_enqueue_script( $this->frontend_scripts[ 'handle' ] );
                 }
             }
+        }
+
+        public function can_enqueue( $post_types_array ){
+            global $post;
+            $valid_post_type = is_object( $post ) && in_array( $post->post_type, $post_types_array );
+            $show_for_all = in_array( 'all', $post_types_array ) ||  is_404(); 
+            return ( $valid_post_type  || $show_for_all );
         }
 
         public function admin_styles() {
