@@ -84,7 +84,7 @@ class Customizer {
         $wp_customize->add_setting(
             'show_call_now_button',
             [
-                'default'           => true,
+                'default'           => false,
                 'transport'         => 'refresh',
 				'sanitize_callback' => [ $this, 'sanitize_checkbox'],
 			]
@@ -262,7 +262,7 @@ class Customizer {
 
     public function sanitize_checkbox( $input ){
         //returns true if checkbox is checked
-        return ( isset( $input ) ? true : false );
+        return ( ( isset( $input ) && true == $input ) ? true : false );
     }
 }
 
