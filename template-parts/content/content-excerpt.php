@@ -33,7 +33,9 @@
             <?php SVG::icon( 'calendar' ); ?>
 
             <time class="entry-date published updated" datetime="<?php echo esc_attr( get_the_date( DATE_W3C ) ); ?>">
-                <?php echo esc_html( get_the_date() ); ?>
+                <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+                    <?php echo esc_html( get_the_date() ); ?>
+                </a>
             </time>
 
         </span>

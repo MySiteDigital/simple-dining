@@ -15,3 +15,11 @@
     @media (min-width: 92em)  { @content; }
   }
 }
+
+@mixin clearfix() {
+  &::after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+}

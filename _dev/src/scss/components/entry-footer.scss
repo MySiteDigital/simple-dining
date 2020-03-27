@@ -1,5 +1,6 @@
 .entry-footer {
     display: block;
+    clear: both;
     align-items: center;
     margin-bottom: 60px;
     padding: 8px;
@@ -10,6 +11,10 @@
 
     @include bp (min-sm) {
         display: flex;
+        flex-wrap: wrap;
+        a {
+            margin-left: 4px;
+        }
     }
 
     span {

@@ -1,6 +1,8 @@
 .pagination {
-
+    clear: both;
+    max-width: 600px;
     padding-top: 16px;
+    margin: 0 auto 40px;
     border-top: 4px solid $java;
     border-top: 4px solid var(--highlight-color-1);
 

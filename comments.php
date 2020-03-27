@@ -45,34 +45,36 @@ if ( $comments ) {
 		<ul class="comments-inner section-inner thin max-percentage">
 
             <?php
-            
-			wp_list_comments();
+				wp_list_comments();
+				
+				$comment_pagination = paginate_comments_links(
+					[
+						'echo'      => false,
+						'end_size'  => 0,
+						'mid_size'  => 0,
+						'next_text' => '',
+						'prev_text' => ''
+					]
+				);
 
-			$comment_pagination = paginate_comments_links(
-				array(
-					'echo'      => false,
-					'end_size'  => 0,
-					'mid_size'  => 0,
-					'next_text' => __( 'Newer Comments', 'simple-dining' ) . ' <span aria-hidden="true">&rarr;</span>',
-					'prev_text' => '<span aria-hidden="true">&larr;</span> ' . __( 'Older Comments', 'simple-dining' ),
-				)
-			);
+				if ( $comment_pagination ) {
+					$pagination_classes = '';
 
-			if ( $comment_pagination ) {
-				$pagination_classes = '';
+					// If we're only showing the "Next" link, add a class indicating so.
+					if ( false === strpos( $comment_pagination, 'prev page-numbers' ) ) {
+						$pagination_classes = ' only-next';
+					}
+					?>
 
-				// If we're only showing the "Next" link, add a class indicating so.
-				if ( false === strpos( $comment_pagination, 'prev page-numbers' ) ) {
-					$pagination_classes = ' only-next';
+					<h4>More Comments</h4>
+					<nav class="comments-pagination pagination<?php echo $pagination_classes;  ?>" aria-label="<?php esc_attr_e( 'Comments', 'simple-dining' ); ?>">
+						<div class="nav-links">
+							<?php get_template_part( 'template-parts/navigation/comment-pagination' ); ?>
+						</div>
+					</nav>
+
+					<?php
 				}
-				?>
-
-				<nav class="comments-pagination pagination<?php echo $pagination_classes;  ?>" aria-label="<?php esc_attr_e( 'Comments', 'simple-dining' ); ?>">
-					<?php echo wp_kses_post( $comment_pagination ); ?>
-				</nav>
-
-				<?php
-			}
 			?>
 
 		</ul><!-- .comments-inner -->

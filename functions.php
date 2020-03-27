@@ -41,7 +41,8 @@ if ( ! isset( $content_width ) ) {
 
 
 function custom_theme_title( $title ) {
-	$title = get_bloginfo( 'name' );
+    global $post;
+    $title = get_bloginfo( 'name' );
     if( is_front_page() ){
         if( is_home() ){
             $title .= ' - Latest Posts';
@@ -49,6 +50,12 @@ function custom_theme_title( $title ) {
         else {
             $title .= ' - ' . get_bloginfo( 'description' );
         }
+    }
+    else if( is_404() ){
+        $title .= ' - Page Not Found';
+    }
+    else if( is_object( $post ) ){
+        $title .= ' - ' . wp_strip_all_tags( $post->post_title );
     }
     return $title;
 }
