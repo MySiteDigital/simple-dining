@@ -21,4 +21,14 @@
     -webkit-clip-path: inset(50%);
     clip-path: inset(50%);
     border: 0;
+
+    &.screen-reader-focusable:active, 
+    &.screen-reader-focusable:focus {
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 0;
+        overflow: visible;
+        clip-path: none;
+    }
 }

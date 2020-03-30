@@ -1,10 +1,9 @@
 <?php use MySiteDigital\Assets\SVG; ?>
 
 <div class="nav-icons">
-    <button type="button" id="open-menu">
+    <button type="button" id="open-menu" aria-label="Open Menu">
         <?php 
             SVG::icon( 'open-menu' ); 
         ?>
-        <span class="screen-reader-text">Open Menu</span>
     </button>
 </div>

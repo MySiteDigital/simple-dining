@@ -75,11 +75,15 @@ var nav = {
         nav.openButton.on(
             'click',
             function(e){
+                nav.hiddenMenu.show();
                 nav.hiddenMenu.animate(
                     {
                         left: 0
                     },
-                    300
+                    300,
+                    function () {
+                        nav.closeButton.focus()
+                    }
                 );
             }
         );
@@ -87,11 +91,15 @@ var nav = {
         nav.closeButton.on(
             'click',
             function(e){
+                nav.hiddenMenu.hide();
                 nav.hiddenMenu.animate(
                     {
                         left: '-100%'
                     },
-                    300
+                    300,
+                    function () {
+                        nav.openButton.focus()
+                    }
                 );
             }
         );
