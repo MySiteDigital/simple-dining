@@ -18,6 +18,11 @@ var alignmentAdjustor = {
                 'max-width',
                 maxWidth
             );
+
+            alignmentAdjustor.fullWidthBlocks.css(
+                'width',
+                'auto'
+            );
         }
     },
 

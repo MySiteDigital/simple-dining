@@ -25,6 +25,26 @@ p.has-drop-cap:not(:focus)::first-letter {
     }
 }
 
+.alignwide {
+    margin: 24px -16px;
+    max-width: 100vw;
+
+    @include bp(min-md) {
+        max-width: 720px;
+        margin: 24px -60px;
+    }
+
+    @include bp(min-lg) {
+        max-width: 840px;
+        margin: 24px -120px;
+    }
+
+    @include bp(min-xl) {
+        max-width: 1080px;
+        margin: 24px -240px;
+    }
+}
+
 .alignfull {
     margin: 24px -16px;
     max-width: 100vw;
@@ -69,36 +89,31 @@ p.has-drop-cap:not(:focus)::first-letter {
 
 
 .wp-block-image,
-.wp-block-gallery {
+.wp-block-gallery,
+.wp-block-cover {
 
     margin-bottom: 24px;
+
+    &.alignwide {
+       @extend .alignwide;
+    }
 
     &.alignfull {
         @extend .alignfull;
     }
 
-    &.alignwide {
-        margin: 24px -16px;
-        max-width: 100vw;
-
-        @include bp(min-md) {
-            max-width: 720px;
-            margin: 24px -60px;
-        }
-
-        @include bp(min-lg) {
-            max-width: 840px;
-            margin: 24px -120px;
-        }
-
-        @include bp(min-xl) {
-            max-width: 1080px;
-            margin: 24px -240px;
-        }
-    }
-
 }
 
+.wp-block-cover {
+    @extend .wp-block-gallery;
+    width: auto;
+    color: white;
+
+    a:hover {
+        color: $java;
+        color: var(--highlight-color-1);
+    }   
+}
 
 .wp-block-quote {
 
@@ -226,7 +241,40 @@ p.has-drop-cap:not(:focus)::first-letter {
     }
 }
 
+.wp-block-group {
+    margin: 0 -32px 20px;
+    padding: 32px;
+}
+
+.wp-block-media-text .wp-block-media-text__content {
+    padding: 20px 60px;
+    max-width: 600px;
+}
+
 .wp-block-button__link {
     @extend .button;
     margin-bottom: 16px;
+
+    .is-style-outline & {
+        border: 4px solid;
+    }
+}
+
+.wp-block-search .wp-block-search__button {
+    @extend .button;
+    margin: 8px 0 0;
+}
+
+.wp-block-latest {
+    &-posts,
+    &-comments {
+        padding: 0;
+    }
+}
+
+.wp-block-archives,
+.wp-block-categories {
+    &-dropdown {
+        margin-bottom: 20px;
+    }
 }

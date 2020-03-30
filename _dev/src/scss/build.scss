@@ -19,6 +19,8 @@
 @import 'components/comments';
 @import 'components/contact-form-7';
 @import 'components/entry-footer';
+@import 'components/entry-header';
+@import 'components/gallery';
 @import 'components/navigation';
 @import 'components/nav-icons';
 @import 'components/pagination';
@@ -40,4 +42,4 @@
 /* pages */
 @import 'pages/404-page';
 @import 'pages/hero-page';
-// @import 'pages/menu-page';
+@import 'pages/menu-page';
